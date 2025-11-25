@@ -61,9 +61,9 @@ export default function Product() {
       'Comprehensive money management and bankroll strategies'
     ],
     stats: [
-      { label: 'Accuracy Rate', value: '95%', icon: FiAward },
-      { label: 'Active Users', value: '100K+', icon: FiUsers },
-      { label: 'Sports Covered', value: '15+', icon: FiActivity }
+      { label: 'Accuracy Rate', value: '91%', icon: FiAward },
+      { label: 'Active Users', value: '5K+', icon: FiUsers },
+      { label: 'Football Covered', value: '15+', icon: FiActivity }
     ],
     color: 'from-[#0057B8] to-[#003d82]',
     glowColor: 'shadow-[#0057B8]/50',
@@ -97,8 +97,8 @@ export default function Product() {
       'Customizable alerts and notifications for your favorite teams'
     ],
     stats: [
-      { label: 'Live Matches', value: '500+', icon: FiActivity },
-      { label: 'Update Speed', value: '<1s', icon: FiClock },
+      { label: 'Live Matches', value: '1500+', icon: FiActivity },
+      { label: 'Update Speed', value: '<0.1s', icon: FiClock },
       { label: 'Data Points', value: '10M+', icon: FiTrendingUp }
     ],
     color: 'from-[#FFC527] to-[#ffb700]',
