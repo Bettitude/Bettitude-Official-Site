@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { FiExternalLink, FiTrendingUp, FiUsers, FiClock, FiAward, FiActivity, FiCheckCircle, FiArrowRight } from 'react-icons/fi';
+ 
+
 
 // Placeholder images - replace with your actual imports
 const Betsport = "https://via.placeholder.com/150";
