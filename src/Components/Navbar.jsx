@@ -79,13 +79,15 @@ export default function BettitudeNavbar() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex justify-between items-center h-24">
           {/* Logo with animation */}
-          <div className="flex-shrink-0 group">
+          <Link to="/">
+            <div className="flex-shrink-0 group">
             <img
               src={Betlogo}
               alt="Bettitude Logo"
               className="h-6 sm:h-7 lg:h-8 xl:h-[30px] w-auto transition-all duration-300"
             />
           </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-2">
