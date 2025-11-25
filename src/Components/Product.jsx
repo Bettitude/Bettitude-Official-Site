@@ -25,9 +25,9 @@ export default function Product() {
       'Updated hourly with trending news and breaking stories'
     ],
     stats: [
-      { label: 'Daily Readers', value: '50K+', icon: FiUsers },
-      { label: 'Articles', value: '2,500+', icon: FiActivity },
-      { label: 'Expert Writers', value: '25+', icon: FiAward }
+      { label: 'Daily Readers', value: '5K+', icon: FiUsers },
+      { label: 'Articles Per Week', value: '50+', icon: FiActivity },
+      { label: 'Expert Writers', value: '6+', icon: FiAward }
     ],
     color: 'from-[#FFC527] to-[#ffb700]',
     glowColor: 'shadow-[#FFC527]/50',
