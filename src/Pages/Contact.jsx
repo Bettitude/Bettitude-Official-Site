@@ -59,8 +59,8 @@ export default function Contact() {
   ];
 
   const additionalInfo = [
-    { icon: FiPhone, text: '+1 (234) 567-890', label: 'Phone Support' },
-    { icon: FiMapPin, text: '123 Sports Avenue, Gaming District', label: 'Address' },
+    { icon: FiPhone, text: '+61412877500', label: 'Phone Support' },
+    { icon: FiMapPin, text: '25 Ladbroke Avenue, Burnie, Tas 7320, Australia', label: 'Address' },
     { icon: FiClock, text: '24/7 Support Available', label: 'Hours' }
   ];
 
