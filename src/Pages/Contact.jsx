@@ -33,21 +33,21 @@ export default function Contact() {
       icon: FiMail,
       title: 'General info and Technical Support',
       description: 'For general information about BETTITUDE and any issues regarding support',
-      email: 'hello@bettitude.com',
+      email: 'support@bettitude.com',
       color: 'from-[#FFC527] to-[#ffb700]'
     },
     {
       icon: FiMessageSquare,
       title: 'Press info',
       description: 'All inquiry and information about Bettitude Sports blog and press-related issues or more',
-      email: 'keepup@bettitude.com',
+      email: 'pr@bettitude.com',
       color: 'from-[#0057B8] to-[#003d82]'
     },
     {
       icon: FiSend,
       title: 'B2B, Advertisement & Sponsorship',
       description: 'For information regarding sponsorships and advert placements',
-      email: 'pr@bettitude.com',
+      email: 'b2bops@bettitude.com',
       color: 'from-[#FFC527] to-[#ffb700]'
     }
   ];
@@ -60,6 +60,7 @@ export default function Contact() {
 
   const additionalInfo = [
     { icon: FiPhone, text: '+61412877500', label: 'Phone Support' },
+    { icon: FiMail, text: 'hello@bettitude.com', label: 'Mail' },
     { icon: FiMapPin, text: '25 Ladbroke Avenue, Burnie, Tas 7320, Australia', label: 'Address' },
     { icon: FiClock, text: '24/7 Support Available', label: 'Hours' }
   ];
@@ -78,7 +79,7 @@ export default function Contact() {
           <div className="absolute inset-0 bg-gradient-to-r from-[#0057B8]/40 to-[#FFC527]/40"></div>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-5 sm:space-y-8 py-12 sm:py-20">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-5 sm:space-y-8 py-12 sm:py-30">
           <div className="inline-flex items-center space-x-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-[#0057B8]/20 backdrop-blur-sm border border-[#0057B8]/50 rounded-full">
             <FiMail className="text-[#FFC527] text-xs sm:text-sm" />
             <span className="text-[#E0E0E0] text-xs sm:text-sm font-semibold">Get In Touch</span>
