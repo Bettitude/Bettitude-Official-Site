@@ -1,0 +1,31 @@
+import React from 'react'
+import Hero from './Hero'
+import Partnership from './Patnership'
+import Whatwedo from './Whatwedo'
+import Newsletters from '../Components/Newsletters'
+import Product from '../Components/Product'
+import Winattitude from '../Components/Winattitude'
+import CareerCTA from '../Components/CareerHome'
+import Video from '../Components/Video'
+import Support from '../Components/Supports'
+import Announcement from '../Components/Announcement;'
+
+
+const Home = () => {
+  return (
+    <div>
+      <Hero/>
+      <Whatwedo/>
+      <Product/>
+      <Video/>
+      <Partnership/>
+      <Winattitude/>
+      <Announcement/>
+      <CareerCTA/>
+      <Support/>
+      <Newsletters/>
+    </div>
+  )
+}
+
+export default Home
