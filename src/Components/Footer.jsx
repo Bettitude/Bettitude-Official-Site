@@ -131,7 +131,7 @@ export default function Footer() {
             </a>
 
             <p className="text-[#E0E0E0] leading-relaxed text-sm sm:text-base">
-              Your trusted partner for smart betting insights and sports analytics. We bring data-driven predictions to help you win smarter.
+              Your trusted partner for sports data technology, sports analytics and sports media. We bring data driven insight and content  to help you stay ontop of the game.
             </p>
 
             {/* Contact Info */}
