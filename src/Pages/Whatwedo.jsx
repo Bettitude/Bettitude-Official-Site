@@ -57,32 +57,32 @@ export default function Whatwedo() {
       color: 'from-[#0057B8] to-[#003d82]',
       glowColor: 'shadow-[#0057B8]/50'
     },
-    // {
-    //   icon: FiCpu,
-    //   title: 'Stat Research & AI',
-    //   description: 'Automation makes the FUN better. We constantly strive for up-to-date algorithms that predict with precision.',
-    //   features: [
-    //     'Machine learning models',
-    //     'Predictive algorithms',
-    //     'Automated insights',
-    //     'Real-time AI analysis'
-    //   ],
-    //   color: 'from-[#FFC527] to-[#ffb700]',
-    //   glowColor: 'shadow-[#FFC527]/50'
-    // },
-    // {
-    //   icon: FiBriefcase,
-    //   title: 'Sports Business Consultancy',
-    //   description: 'Providing business and social connections via our B2B access through areas such as partnerships and strategic growth.',
-    //   features: [
-    //     'Partnership brokerage',
-    //     'Market analysis',
-    //     'Brand strategy',
-    //     'Revenue optimization'
-    //   ],
-    //   color: 'from-[#0057B8] to-[#003d82]',
-    //   glowColor: 'shadow-[#0057B8]/50'
-    // }
+    {
+      icon: FiCpu,
+      title: 'Stat Research & AI',
+      description: 'Automation makes the FUN better. We constantly strive for up-to-date algorithms that predict with precision.',
+      features: [
+        'Machine learning models',
+        'Predictive algorithms',
+        'Automated insights',
+        'Real-time AI analysis'
+      ],
+      color: 'from-[#FFC527] to-[#ffb700]',
+      glowColor: 'shadow-[#FFC527]/50'
+    },
+    {
+      icon: FiBriefcase,
+      title: 'Sports Business Consultancy',
+      description: 'Providing business and social connections via our B2B access through areas such as partnerships and strategic growth.',
+      features: [
+        'Partnership brokerage',
+        'Market analysis',
+        'Brand strategy',
+        'Revenue optimization'
+      ],
+      color: 'from-[#0057B8] to-[#003d82]',
+      glowColor: 'shadow-[#0057B8]/50'
+    }
   ];
 
   return (
