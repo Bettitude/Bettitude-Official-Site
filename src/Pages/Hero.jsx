@@ -150,7 +150,7 @@ export default function BettitudeHero() {
               <div className="flex items-center space-x-2 sm:space-x-3 mb-3 sm:mb-4">
                 <div className="h-0.5 w-8 sm:w-12 bg-[#FFC527]"></div>
                 <p className="text-[#FFC527] font-bold text-sm sm:text-base lg:text-lg tracking-wider uppercase">
-                  Sports Content Curated For
+                  Sports Content Curated For All
                 </p>
               </div>
               
