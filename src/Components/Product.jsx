@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FiExternalLink, FiTrendingUp, FiUsers, FiClock, FiAward, FiActivity, FiCheckCircle, FiArrowRight } from 'react-icons/fi';
- import Bettisportsblog from '../assets/bettisportsblog.png';
+ import Bettisportsblog from '../assets/Bettisportsblog.png';
 import Betsport from '../assets/Betsport.png';
 
 // Placeholder images - replace with your actual imports
