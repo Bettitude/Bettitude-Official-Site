@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FiArrowRight, FiPlay, FiUsers, FiGlobe } from 'react-icons/fi';
-
+import { Link } from 'react-router-dom';
 export default function BettitudeHero() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [currentFeatureImage, setCurrentFeatureImage] = useState(0);
@@ -183,17 +183,25 @@ export default function BettitudeHero() {
 
             {/* CTA Button - Full width on mobile */}
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 pt-4 sm:pt-6">
-              <a 
+              {/* <a 
                 href="/product" 
                 className="group relative px-6 sm:px-8 lg:px-10 py-4 sm:py-5 lg:py-6 bg-gradient-to-r from-[#FFC527] to-[#ffb700] text-[#0B0F19] font-black rounded-xl sm:rounded-2xl overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-[#FFC527]/50 hover:scale-105 text-center text-base sm:text-lg"
               >
                 <span className="relative z-10 flex items-center justify-center space-x-2 sm:space-x-3">
-                  <span>Explore Our Content</span>
+                  <span>Explore Our Products</span>
                   <FiArrowRight className="text-xl sm:text-2xl group-hover:translate-x-2 transition-transform duration-300" />
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-[#ffb700] to-[#FFC527] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
-              </a>
+              </a> */}
+              <Link to="/products" className="group relative px-6 sm:px-8 lg:px-10 py-4 sm:py-5 lg:py-6 bg-gradient-to-r from-[#FFC527] to-[#ffb700] text-[#0B0F19] font-black rounded-xl sm:rounded-2xl overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-[#FFC527]/50 hover:scale-105 text-center text-base sm:text-lg">
+                <span className="relative z-10 flex items-center justify-center space-x-2 sm:space-x-3">
+                  <span>Explore Our Products</span>
+                  <FiArrowRight className="text-xl sm:text-2xl group-hover:translate-x-2 transition-transform duration-300" />
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-[#ffb700] to-[#FFC527] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+              </Link>
             </div>
 
             {/* Stats - Responsive */}
