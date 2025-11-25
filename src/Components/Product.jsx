@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { FiExternalLink, FiTrendingUp, FiUsers, FiClock, FiAward, FiActivity, FiCheckCircle, FiArrowRight } from 'react-icons/fi';
- 
-
+ import Bettisportsblog from '../assets/bettisportsblog.png';
+import Betsport from '../assets/Betsport.png';
 
 // Placeholder images - replace with your actual imports
-const Betsport = "https://via.placeholder.com/150";
+// const Betsport = "https://via.placeholder.com/150";
 const BScores = "https://via.placeholder.com/150";
 const Bettiblog = "https://via.placeholder.com/150";
-const Bettisportsblog = "https://via.placeholder.com/150";
+// const Bettisportsblog = "https://via.placeholder.com/150";
 
 export default function Product() {
  const products = [
@@ -46,7 +46,7 @@ export default function Product() {
 
   {
     name: 'ProBetpicks',
-    icon: Betsport,
+    // icon: Betsport,
     tagline: 'Precision Predictions for Winning Bets',
     description:
       'ProBetpicks represents the pinnacle of sports prediction technology...',
@@ -82,7 +82,7 @@ export default function Product() {
 
   {
     name: 'BettiScores',
-    icon: BScores,
+    icon: Betsport,
     tagline: 'Real-Time Scores & Live Updates',
     description:
       'BettiScores is your comprehensive sports data hub...',
@@ -167,7 +167,7 @@ export default function Product() {
                   )}
                   
                   <div className="flex items-center space-x-3 sm:space-x-4">
-                    <div className={`w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-br ${product.color} rounded-xl sm:rounded-2xl flex items-center justify-center shadow-xl flex-shrink-0`}>
+                    <div className={`w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-br  rounded-xl sm:rounded-2xl flex items-center justify-center shadow-xl flex-shrink-0`}>
                       <img src={product.icon} alt={product.name} className="w-full h-full object-contain p-2" />
                     </div>
                     <div>
