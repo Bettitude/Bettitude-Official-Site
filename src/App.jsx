@@ -36,7 +36,7 @@ const App = () => {
         <Route path='/terms-of-service' element={<TOS/>} />
         <Route path='/appointment' element={<Appointment/>} />
         <Route path='/privacy-policy' element={<PrivacyPolicy/>} />
-        <Route path='/cookies-poilcy' element={<Cookies/>} />
+        <Route path='/cookies-policy' element={<Cookies/>} />
         
 
 

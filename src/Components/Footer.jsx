@@ -40,7 +40,6 @@ export default function Footer() {
     resources: [
       { name: 'Blog', href: '/blog' },
       { name: 'Help Center', href: '/help' },
-      { name: 'API Docs', href: '/api' },
       { name: 'Community', href: '/community' },
       { name: 'Feedback', href: '/feedback' },
     ],

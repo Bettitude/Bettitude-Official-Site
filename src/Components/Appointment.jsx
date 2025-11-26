@@ -1,36 +1,52 @@
-import React, { useState } from 'react';
-import { FiCalendar, FiClock, FiUser, FiMail, FiPhone, FiMessageSquare, FiCheckCircle, FiArrowRight } from 'react-icons/fi';
+import React, { useState } from "react";
+import {
+  FiCalendar,
+  FiClock,
+  FiUser,
+  FiMail,
+  FiPhone,
+  FiMessageSquare,
+  FiCheckCircle,
+  FiArrowRight,
+} from "react-icons/fi";
 
 export default function Appointment() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    service: '',
-    date: '',
-    time: '',
-    message: ''
+    name: "",
+    email: "",
+    phone: "",
+    service: "",
+    date: "",
+    time: "",
+    message: "",
   });
   const [submitted, setSubmitted] = useState(false);
 
   const services = [
-    'Betting Consultation',
-    'Sports Analysis Strategy',
-    'Premium Picks Package',
-    'VIP Membership Inquiry',
-    'Partnership Discussion',
-    'General Inquiry'
+    "Betting Consultation",
+    "Sports Analysis Strategy",
+    "Premium Picks Package",
+    "VIP Membership Inquiry",
+    "Partnership Discussion",
+    "General Inquiry",
   ];
 
   const timeSlots = [
-    '09:00 AM', '10:00 AM', '11:00 AM', '12:00 PM',
-    '01:00 PM', '02:00 PM', '03:00 PM', '04:00 PM', '05:00 PM'
+    "09:00 AM",
+    "10:00 AM",
+    "11:00 AM",
+    "12:00 PM",
+    "01:00 PM",
+    "02:00 PM",
+    "03:00 PM",
+    "04:00 PM",
+    "05:00 PM",
   ];
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -41,13 +57,13 @@ export default function Appointment() {
     setTimeout(() => {
       setSubmitted(false);
       setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        service: '',
-        date: '',
-        time: '',
-        message: ''
+        name: "",
+        email: "",
+        phone: "",
+        service: "",
+        date: "",
+        time: "",
+        message: "",
       });
     }, 3000);
   };
@@ -57,25 +73,34 @@ export default function Appointment() {
       {/* Animated Background */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-0 w-[500px] h-[500px] bg-[#0057B8]/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-0 w-[500px] h-[500px] bg-[#FFC527]/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        <div
+          className="absolute bottom-1/4 right-0 w-[500px] h-[500px] bg-[#FFC527]/20 rounded-full blur-3xl animate-pulse"
+          style={{ animationDelay: "1s" }}
+        ></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gradient-to-r from-[#0057B8]/10 to-[#FFC527]/10 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-24">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-30">
         {/* Header Section */}
         <div className="text-center space-y-6 mb-16">
           <div className="inline-flex items-center space-x-2 px-4 py-2 bg-[#0057B8]/20 backdrop-blur-sm border border-[#0057B8]/50 rounded-full">
             <FiCalendar className="text-[#FFC527] text-sm" />
-            <span className="text-[#E0E0E0] text-sm font-semibold">Book Your Session</span>
+            <span className="text-[#E0E0E0] text-sm font-semibold">
+              Book Your Session
+            </span>
           </div>
 
           <h1 className="text-5xl lg:text-6xl font-black text-white leading-tight">
             Schedule an
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0057B8] to-[#FFC527]"> Appointment</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0057B8] to-[#FFC527]">
+              {" "}
+              Appointment
+            </span>
           </h1>
 
           <p className="text-xl text-[#E0E0E0] max-w-3xl mx-auto leading-relaxed">
-            Let's discuss how our services can help elevate your sports betting experience
+            Let's discuss how our services can help elevate your sports betting
+            experience
           </p>
 
           <div className="flex justify-center">
@@ -87,14 +112,36 @@ export default function Appointment() {
           {/* Left Side - Info Cards */}
           <div className="space-y-6">
             <div className="bg-gradient-to-br from-[#0057B8]/10 to-[#0B0F19]/50 backdrop-blur-xl border border-[#0057B8]/30 rounded-3xl p-8">
-              <h3 className="text-2xl font-black text-white mb-6">Why Book With Us?</h3>
-              
+              <h3 className="text-2xl font-black text-white mb-6">
+                Why Book With Us?
+              </h3>
+
               <div className="space-y-4">
                 {[
-                  { icon: FiCheckCircle, text: 'Expert consultation from industry professionals' },
-                  { icon: FiCheckCircle, text: 'Personalized betting strategies tailored to you' },
-                  { icon: FiCheckCircle, text: 'Access to premium insights and analysis' },
-                  { icon: FiCheckCircle, text: 'Flexible scheduling to fit your needs' }
+                  {
+                    icon: FiCheckCircle,
+                    text: "Expert consultation from industry professionals",
+                  },
+                  {
+                    icon: FiCheckCircle,
+                    text: "Personalized betting strategies tailored to you",
+                  },
+                  {
+                    icon: FiCheckCircle,
+                    text: "Access to premium insights and analysis",
+                  },
+                  {
+                    icon: FiCheckCircle,
+                    text: "Flexible scheduling to fit your needs",
+                  },
+                  {
+                    icon: FiCheckCircle,
+                    text: "Brand Promotion and Parternship",
+                  },
+                  {
+                    icon: FiCheckCircle,
+                    text: "Use our platform to grow your brand visibility",
+                  },
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-start space-x-3">
                     <item.icon className="text-[#FFC527] text-xl flex-shrink-0 mt-1" />
@@ -105,8 +152,10 @@ export default function Appointment() {
             </div>
 
             <div className="bg-gradient-to-br from-[#FFC527]/10 to-[#0B0F19]/50 backdrop-blur-xl border border-[#FFC527]/30 rounded-3xl p-8">
-              <h3 className="text-2xl font-black text-white mb-4">Contact Information</h3>
-              
+              <h3 className="text-2xl font-black text-white mb-4">
+                Contact Information
+              </h3>
+
               <div className="space-y-4">
                 <div className="flex items-center space-x-3 text-[#E0E0E0]">
                   <FiMail className="text-[#FFC527] text-xl" />
@@ -114,7 +163,7 @@ export default function Appointment() {
                 </div>
                 <div className="flex items-center space-x-3 text-[#E0E0E0]">
                   <FiPhone className="text-[#FFC527] text-xl" />
-                  <span>+1 (555) 123-4567</span>
+                  <span>+61 412 877 500</span>
                 </div>
                 <div className="flex items-center space-x-3 text-[#E0E0E0]">
                   <FiClock className="text-[#FFC527] text-xl" />
@@ -126,9 +175,12 @@ export default function Appointment() {
             <div className="relative bg-gradient-to-br from-[#0057B8]/20 to-transparent backdrop-blur-xl border border-[#0057B8]/30 rounded-3xl p-8 overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#FFC527]/20 rounded-full blur-2xl"></div>
               <div className="relative">
-                <h3 className="text-2xl font-black text-white mb-3">Need Help?</h3>
+                <h3 className="text-2xl font-black text-white mb-3">
+                  Need Help?
+                </h3>
                 <p className="text-[#E0E0E0] mb-4">
-                  Our support team is available to assist you with any questions about our services.
+                  Our support team is available to assist you with any questions
+                  about our services.
                 </p>
                 <a
                   href="/contact"
@@ -145,7 +197,9 @@ export default function Appointment() {
           <div className="relative bg-gradient-to-br from-[#0057B8]/10 to-[#0B0F19]/50 backdrop-blur-xl border border-[#0057B8]/30 rounded-3xl p-8 lg:p-10">
             {!submitted ? (
               <form onSubmit={handleSubmit} className="space-y-6">
-                <h3 className="text-3xl font-black text-white mb-6">Book Your Appointment</h3>
+                <h3 className="text-3xl font-black text-white mb-6">
+                  Book Your Appointment
+                </h3>
 
                 {/* Name Input */}
                 <div className="space-y-2">
@@ -213,7 +267,11 @@ export default function Appointment() {
                   >
                     <option value="">Select a service</option>
                     {services.map((service, idx) => (
-                      <option key={idx} value={service} className="bg-[#0B0F19]">
+                      <option
+                        key={idx}
+                        value={service}
+                        className="bg-[#0B0F19]"
+                      >
                         {service}
                       </option>
                     ))}
@@ -289,9 +347,12 @@ export default function Appointment() {
                 <div className="w-20 h-20 bg-gradient-to-br from-[#FFC527] to-[#ffb700] rounded-full flex items-center justify-center mx-auto">
                   <FiCheckCircle className="text-[#0B0F19] text-4xl" />
                 </div>
-                <h3 className="text-3xl font-black text-white">Appointment Booked!</h3>
+                <h3 className="text-3xl font-black text-white">
+                  Appointment Booked!
+                </h3>
                 <p className="text-[#E0E0E0] text-lg">
-                  Thank you! We've received your appointment request and will send you a confirmation email shortly.
+                  Thank you! We've received your appointment request and will
+                  send you a confirmation email shortly.
                 </p>
               </div>
             )}

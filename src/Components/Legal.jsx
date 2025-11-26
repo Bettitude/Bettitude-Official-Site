@@ -17,7 +17,7 @@ const Legal = () => {
         "Termination conditions & policy enforcement",
         "Governing Law & dispute resolution jurisdiction"
       ],
-      link: "/tos",
+      link: "/terms-of-service",
       gradient: "from-[#0057B8] to-[#003d82]",
       accentColor: "#0057B8"
     },
@@ -266,8 +266,8 @@ const Legal = () => {
                   <p className="text-[#E0E0E0] leading-relaxed">
                     <span className="text-white font-semibold">Bettitude Inc.</span><br />
                     Legal Department<br />
-                    58 Berrigan Rd<br />
-                    Miandetta, Tas 7320<br />
+                   25 Ladbroke Avenue<br />
+                    Burnie, Tas 7320<br />
                     Australia
                   </p>
                 </div>

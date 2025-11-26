@@ -83,7 +83,7 @@ export default function Support() {
           </h1>
 
           <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-[#E0E0E0] max-w-3xl mx-auto leading-relaxed px-4">
-            Kindly support us to keep the Rights on and bring you the best contents there is...
+            Kindly support us to keep the Lights on and bring you the best contents there is...
           </p>
 
           <div className="flex justify-center">
@@ -199,10 +199,10 @@ export default function Support() {
               {/* Right Side - Stats */}
               <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:gap-6">
                 {[
-                  { value: '50K+', label: 'Daily Readers' },
-                  { value: '100K+', label: 'Active Users' },
-                  { value: '500+', label: 'Live Matches' },
-                  { value: '2,500+', label: 'Articles' }
+                  { value: '500+', label: 'Daily Readers' },
+                  { value: '5K+', label: 'Active Users' },
+                  { value: '1500+', label: 'Live Matches' },
+                  { value: '2,500+', label: 'Content' }
                 ].map((stat, idx) => (
                   <div
                     key={idx}
