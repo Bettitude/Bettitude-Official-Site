@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { FiExternalLink, FiTrendingUp, FiUsers, FiClock, FiAward, FiActivity, FiCheckCircle, FiArrowRight } from 'react-icons/fi';
  import Bettisportsblog from '../assets/Bettisportsblog.png';
 import Betsport from '../assets/Betsport.png';
+import Probetfav from '../assets/Probetfav.png';
 
 // Placeholder images - replace with your actual imports
 // const Betsport = "https://via.placeholder.com/150";
@@ -46,7 +47,7 @@ export default function Product() {
 
   {
     name: 'ProBetpicks',
-    // icon: Betsport,
+    icon: Probetfav,
     tagline: 'Precision Predictions for Winning Bets',
     description:
       'ProBetpicks represents the pinnacle of sports prediction technology...',

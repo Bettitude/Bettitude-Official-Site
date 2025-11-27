@@ -22,9 +22,9 @@ export default function Footer() {
   const footerLinks = {
     company: [
       { name: 'About Us', href: '/about' },
+      { name: 'News', href: '/news' },
       { name: 'Our Team', href: '/team' },
       { name: 'Careers', href: '/careers' },
-      { name: 'Press Kit', href: '/press' },
     ],
     product: [
       { name: 'BettiSportsblog', href: 'https://BettiSportsblog.com', external: true },

@@ -9,6 +9,7 @@ import CareerCTA from '../Components/CareerHome'
 import Video from '../Components/Video'
 import Support from '../Components/Supports'
 import Announcement from '../Components/Announcement;'
+import NewsHome from '../Components/NewsHome'
 
 
 const Home = () => {
@@ -20,6 +21,7 @@ const Home = () => {
       <Video/>
       <Partnership/>
       <Winattitude/>
+      <NewsHome/>
       <Announcement/>
       <CareerCTA/>
       <Support/>
