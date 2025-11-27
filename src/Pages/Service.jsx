@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import { FiExternalLink, FiFacebook, FiTwitter, FiYoutube, FiInstagram, FiLinkedin, FiArrowRight, FiCheckCircle } from 'react-icons/fi';
 import ProBetPick from '../assets/ProBetPick.png'
 import BScores from '../assets/BScores.png'
-import BettiSports_logo from '../assets/BettiSports_logo.png'
+import BettiSportsLogo from '../assets/BettiSportsLogo.png'
 export default function Service() {
   const [activeService, setActiveService] = useState(0);
 
   const services = [
     {
       name: 'Bettitude SportsBlog',
-      image: BettiSports_logo,
+      image: BettiSportsLogo,
       size: 300,
       tagline: 'Your Gateway to Premium Sports Content',
       description: 'Bettisports is a sports media platform that connects people to the latest news reports, sports analysis, previews and lots more. Our mission is to provide access to premium information and entertainment whilst promoting community spirit through sports.',
