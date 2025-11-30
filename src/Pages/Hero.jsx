@@ -27,7 +27,7 @@ export default function BettitudeHero() {
       subtitle: 'Passion. Glory. Football.'
     },
     {
-      image: 'https://images.unsplash.com/photo-1622163642998-1ea32b0bbc67?w=800&q=90',
+      image: 'https://images.unsplash.com/photo-1551958219-acbc608c6377?w=800&q=90',
       title: 'Women Football in Our Heart',
       subtitle: 'Equality. Power. Excellence.'
     },

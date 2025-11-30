@@ -13,6 +13,8 @@ import {
   FiHeart,
 } from 'react-icons/fi';
 import { FaReddit, FaTiktok } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import Betlogo from "../assets/Betlogo.png";
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -117,7 +119,7 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-2 space-y-5 sm:space-y-6">
             {/* Logo */}
-            <a href="/" className="inline-block">
+            {/* <a href="/" className="inline-block">
               <div className="flex items-center space-x-2">
                 <div className="relative">
                   <div className="absolute inset-0 bg-[#0057B8] blur-xl opacity-50"></div>
@@ -127,7 +129,10 @@ export default function Footer() {
                   </div>
                 </div>
               </div>
-            </a>
+            </a> */}
+            <Link to="/">
+              <img src={Betlogo} alt="" className='h-[50px]' />
+            </Link>
 
             <p className="text-[#E0E0E0] leading-relaxed text-sm sm:text-base">
               Your trusted partner for sports data technology, sports analytics and sports media. We bring data driven insight and content  to help you stay ontop of the game.
