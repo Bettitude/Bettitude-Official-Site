@@ -1,68 +1,97 @@
-import React, { useState } from 'react';
-import { FiMail, FiMessageSquare, FiSend, FiCheckCircle, FiFacebook, FiTwitter, FiYoutube, FiPhone, FiMapPin, FiClock } from 'react-icons/fi';
+import React, { useState } from "react";
+import {
+  FiMail,
+  FiMessageSquare,
+  FiSend,
+  FiCheckCircle,
+  FiFacebook,
+  FiTwitter,
+  FiYoutube,
+  FiPhone,
+  FiMapPin,
+  FiClock,
+} from "react-icons/fi";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
+    name: "",
+    email: "",
+    message: "",
   });
-  const [submitStatus, setSubmitStatus] = useState('idle'); // idle, loading, success
-
-  const handleSubmit = (e) => {
+  const [submitStatus, setSubmitStatus] = useState("idle"); // idle, loading, success
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitStatus('loading');
-    
-    // Simulate API call
-    setTimeout(() => {
-      setSubmitStatus('success');
-      setFormData({ name: '', email: '', message: '' });
-      setTimeout(() => setSubmitStatus('idle'), 3000);
-    }, 1500);
+    setSubmitStatus("loading");
+
+    try {
+      const response = await fetch("https://formspree.io/f/xovgjvlr", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmitStatus("success"); // <-- use setSubmitStatus
+        setFormData({ name: "", email: "", message: "" });
+        setTimeout(() => setSubmitStatus("idle"), 3000);
+      } else {
+        throw new Error("Form submission failed");
+      }
+    } catch (error) {
+      console.error(error);
+      setSubmitStatus("error");
+    }
   };
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   const contactInfo = [
     {
       icon: FiMail,
-      title: 'General info and Technical Support',
-      description: 'For general information about BETTITUDE and any issues regarding support',
-      email: 'support@bettitude.com',
-      color: 'from-[#FFC527] to-[#ffb700]'
+      title: "General info and Technical Support",
+      description:
+        "For general information about BETTITUDE and any issues regarding support",
+      email: "support@bettitude.com",
+      color: "from-[#FFC527] to-[#ffb700]",
     },
     {
       icon: FiMessageSquare,
-      title: 'Press info',
-      description: 'All inquiry and information about Bettitude Sports blog and press-related issues or more',
-      email: 'pr@bettitude.com',
-      color: 'from-[#0057B8] to-[#003d82]'
+      title: "Press info",
+      description:
+        "All inquiry and information about Bettitude Sports blog and press-related issues or more",
+      email: "pr@bettitude.com",
+      color: "from-[#0057B8] to-[#003d82]",
     },
     {
       icon: FiSend,
-      title: 'B2B, Advertisement & Sponsorship',
-      description: 'For information regarding sponsorships and advert placements',
-      email: 'b2bops@bettitude.com',
-      color: 'from-[#FFC527] to-[#ffb700]'
-    }
+      title: "B2B, Advertisement & Sponsorship",
+      description:
+        "For information regarding sponsorships and advert placements",
+      email: "b2bops@bettitude.com",
+      color: "from-[#FFC527] to-[#ffb700]",
+    },
   ];
 
   const socialLinks = [
-    { icon: FiFacebook, href: 'https://facebook.com', label: 'Facebook' },
-    { icon: FiTwitter, href: 'https://twitter.com', label: 'Twitter' },
-    { icon: FiYoutube, href: 'https://youtube.com', label: 'YouTube' }
+    { icon: FiFacebook, href: "https://facebook.com", label: "Facebook" },
+    { icon: FiTwitter, href: "https://twitter.com", label: "Twitter" },
+    { icon: FiYoutube, href: "https://youtube.com", label: "YouTube" },
   ];
 
   const additionalInfo = [
-    { icon: FiPhone, text: '+61412877500', label: 'Phone Support' },
-    { icon: FiMail, text: 'hello@bettitude.com', label: 'Mail' },
-    { icon: FiMapPin, text: '25 Ladbroke Avenue, Burnie, Tas 7320, Australia', label: 'Address' },
-    { icon: FiClock, text: '24/7 Support Available', label: 'Hours' }
+    { icon: FiPhone, text: "+61412877500", label: "Phone Support" },
+    { icon: FiMail, text: "hello@bettitude.com", label: "Mail" },
+    {
+      icon: FiMapPin,
+      text: "25 Ladbroke Avenue, Burnie, Tas 7320, Australia",
+      label: "Address",
+    },
+    { icon: FiClock, text: "24/7 Support Available", label: "Hours" },
   ];
 
   return (
@@ -70,7 +99,7 @@ export default function Contact() {
       {/* Hero Section */}
       <div className="relative min-h-[40vh] sm:min-h-[50vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <img 
+          <img
             src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1920&q=80"
             alt="Contact"
             className="w-full h-full object-cover"
@@ -82,7 +111,9 @@ export default function Contact() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-5 sm:space-y-8 py-12 sm:py-30">
           <div className="inline-flex items-center space-x-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-[#0057B8]/20 backdrop-blur-sm border border-[#0057B8]/50 rounded-full">
             <FiMail className="text-[#FFC527] text-xs sm:text-sm" />
-            <span className="text-[#E0E0E0] text-xs sm:text-sm font-semibold">Get In Touch</span>
+            <span className="text-[#E0E0E0] text-xs sm:text-sm font-semibold">
+              Get In Touch
+            </span>
           </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-black text-white leading-tight px-4">
@@ -118,11 +149,15 @@ export default function Contact() {
                 className="group relative bg-gradient-to-br from-[#0057B8]/10 to-[#0B0F19]/50 backdrop-blur-xl border border-[#0057B8]/30 rounded-xl sm:rounded-2xl p-5 sm:p-6 lg:p-8 hover:border-[#FFC527]/50 hover:scale-105 transition-all duration-500"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-[#FFC527]/0 to-[#FFC527]/0 group-hover:from-[#FFC527]/10 group-hover:to-[#0057B8]/10 rounded-xl sm:rounded-2xl transition-all duration-500"></div>
-                
+
                 <div className="relative space-y-4 sm:space-y-6">
                   <div className="relative">
-                    <div className={`absolute inset-0 bg-gradient-to-br ${info.color} blur-2xl opacity-50 group-hover:opacity-100 transition-opacity duration-500`}></div>
-                    <div className={`relative w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-br ${info.color} rounded-lg sm:rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                    <div
+                      className={`absolute inset-0 bg-gradient-to-br ${info.color} blur-2xl opacity-50 group-hover:opacity-100 transition-opacity duration-500`}
+                    ></div>
+                    <div
+                      className={`relative w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-br ${info.color} rounded-lg sm:rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}
+                    >
                       <info.icon className="text-[#0B0F19] text-2xl sm:text-3xl" />
                     </div>
                   </div>
@@ -142,7 +177,7 @@ export default function Contact() {
                   >
                     <span>Write to us at:</span>
                   </a>
-                  
+
                   <a
                     href={`mailto:${info.email}`}
                     className="block px-3 sm:px-4 py-2.5 sm:py-3 bg-[#0057B8]/20 backdrop-blur-sm border border-[#0057B8]/30 rounded-lg sm:rounded-xl text-white font-bold text-sm sm:text-base hover:bg-[#0057B8]/40 hover:border-[#FFC527]/50 transition-all duration-300"
@@ -159,14 +194,15 @@ export default function Contact() {
             {/* Contact Form */}
             <div className="relative bg-gradient-to-br from-[#0057B8]/10 to-[#0B0F19]/50 backdrop-blur-xl border border-[#0057B8]/30 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 hover:border-[#FFC527]/50 transition-all duration-500">
               <div className="absolute inset-0 bg-gradient-to-br from-[#FFC527]/0 to-[#FFC527]/0 hover:from-[#FFC527]/10 hover:to-[#0057B8]/10 rounded-2xl sm:rounded-3xl transition-all duration-500 pointer-events-none"></div>
-              
+
               <div className="relative space-y-6 sm:space-y-8">
                 <div className="space-y-3 sm:space-y-4">
                   <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white">
                     Send Us a Message
                   </h2>
                   <p className="text-[#E0E0E0] text-sm sm:text-base">
-                    Fill out the form below and we'll get back to you as soon as possible
+                    Fill out the form below and we'll get back to you as soon as
+                    possible
                   </p>
                 </div>
 
@@ -218,26 +254,28 @@ export default function Contact() {
 
                   <button
                     onClick={handleSubmit}
-                    disabled={submitStatus === 'loading' || submitStatus === 'success'}
+                    disabled={
+                      submitStatus === "loading" || submitStatus === "success"
+                    }
                     className={`group w-full flex items-center justify-center space-x-2 px-6 sm:px-8 py-4 sm:py-5 rounded-xl font-bold text-sm sm:text-base transition-all duration-300 ${
-                      submitStatus === 'success'
-                        ? 'bg-green-500 text-white'
-                        : 'bg-gradient-to-r from-[#FFC527] to-[#ffb700] text-[#0B0F19] hover:shadow-2xl hover:shadow-[#FFC527]/50 hover:scale-105'
+                      submitStatus === "success"
+                        ? "bg-green-500 text-white"
+                        : "bg-gradient-to-r from-[#FFC527] to-[#ffb700] text-[#0B0F19] hover:shadow-2xl hover:shadow-[#FFC527]/50 hover:scale-105"
                     }`}
                   >
-                    {submitStatus === 'loading' && (
+                    {submitStatus === "loading" && (
                       <>
                         <div className="w-4 h-4 sm:w-5 sm:h-5 border-2 border-[#0B0F19] border-t-transparent rounded-full animate-spin"></div>
                         <span>Sending...</span>
                       </>
                     )}
-                    {submitStatus === 'success' && (
+                    {submitStatus === "success" && (
                       <>
                         <FiCheckCircle className="text-lg sm:text-xl" />
                         <span>Message Sent!</span>
                       </>
                     )}
-                    {submitStatus === 'idle' && (
+                    {submitStatus === "idle" && (
                       <>
                         <span>Let's Get Started</span>
                         <FiSend className="text-lg sm:text-xl group-hover:translate-x-1 transition-transform duration-300" />
@@ -253,11 +291,13 @@ export default function Contact() {
               {/* Social Media */}
               <div className="relative bg-gradient-to-br from-[#FFC527]/10 to-[#0B0F19]/50 backdrop-blur-xl border border-[#FFC527]/30 rounded-xl sm:rounded-2xl p-5 sm:p-6 lg:p-8 hover:border-[#FFC527]/50 transition-all duration-500">
                 <div className="space-y-4 sm:space-y-6">
-                  <h3 className="text-xl sm:text-2xl font-bold text-white">Follow Us</h3>
+                  <h3 className="text-xl sm:text-2xl font-bold text-white">
+                    Follow Us
+                  </h3>
                   <p className="text-[#E0E0E0] text-sm sm:text-base">
                     Stay connected on social media for the latest updates
                   </p>
-                  
+
                   <div className="flex space-x-3 sm:space-x-4">
                     {socialLinks.map((social, idx) => (
                       <a
@@ -278,8 +318,10 @@ export default function Contact() {
               {/* Additional Contact Info */}
               <div className="relative bg-gradient-to-br from-[#0057B8]/10 to-[#0B0F19]/50 backdrop-blur-xl border border-[#0057B8]/30 rounded-xl sm:rounded-2xl p-5 sm:p-6 lg:p-8 hover:border-[#FFC527]/50 transition-all duration-500">
                 <div className="space-y-4 sm:space-y-6">
-                  <h3 className="text-xl sm:text-2xl font-bold text-white">Other Ways to Reach Us</h3>
-                  
+                  <h3 className="text-xl sm:text-2xl font-bold text-white">
+                    Other Ways to Reach Us
+                  </h3>
+
                   <div className="space-y-3 sm:space-y-4">
                     {additionalInfo.map((item, idx) => (
                       <div
@@ -290,8 +332,12 @@ export default function Contact() {
                           <item.icon className="text-[#0B0F19] text-lg sm:text-xl" />
                         </div>
                         <div>
-                          <p className="text-white font-semibold text-sm sm:text-base">{item.label}</p>
-                          <p className="text-[#E0E0E0] text-xs sm:text-sm">{item.text}</p>
+                          <p className="text-white font-semibold text-sm sm:text-base">
+                            {item.label}
+                          </p>
+                          <p className="text-[#E0E0E0] text-xs sm:text-sm">
+                            {item.text}
+                          </p>
                         </div>
                       </div>
                     ))}
@@ -306,8 +352,12 @@ export default function Contact() {
                     <FiCheckCircle className="text-[#0B0F19] text-2xl sm:text-3xl" />
                   </div>
                   <div>
-                    <p className="text-white font-bold text-base sm:text-lg">Quick Response</p>
-                    <p className="text-[#E0E0E0] text-xs sm:text-sm">We typically respond within 24 hours</p>
+                    <p className="text-white font-bold text-base sm:text-lg">
+                      Quick Response
+                    </p>
+                    <p className="text-[#E0E0E0] text-xs sm:text-sm">
+                      We typically respond within 24 hours
+                    </p>
                   </div>
                 </div>
               </div>
