@@ -3,33 +3,36 @@ import { FiMail, FiCheckCircle, FiArrowRight, FiStar, FiTrendingUp } from 'react
 
 export default function Newsletters() {
   const [email, setEmail] = useState('');
-  const [subscribeStatus, setSubscribeStatus] = useState('idle'); 
+  const [subscribeStatus, setSubscribeStatus] = useState('idle');
 
   const handleSubscribe = async (e) => {
     e.preventDefault();
+    if (!email) return;
+
     setSubscribeStatus('loading');
 
     try {
       const formData = new FormData();
-      formData.append('email', email);
-      
-      const response = await fetch("https://formspree.io/f/meovkwbg", {
-        method: "POST",
-        headers: { "Accept": "application/json" },
+      formData.append('EMAIL', email);
+
+      // Mailchimp endpoint (replace with your list's action URL)
+      const mailchimpURL =
+        'https://yahoo.us3.list-manage.com/subscribe/post?u=dd6afb4fc5ed6710c3c9a8e77&id=f9898608ae';
+
+      const response = await fetch(mailchimpURL, {
+        method: 'POST',
+        mode: 'no-cors', // prevents CORS errors; Mailchimp doesn't respond with JSON
         body: formData,
       });
 
-      if (response.ok) {
-        setSubscribeStatus("success");
-        setEmail("");
-        setTimeout(() => setSubscribeStatus("idle"), 3000);
-      } else {
-        setSubscribeStatus("idle");
-        alert("Something went wrong. Please try again.");
-      }
+      // Since Mailchimp doesn't return JSON for no-cors, we assume success
+      setSubscribeStatus('success');
+      setEmail('');
+      setTimeout(() => setSubscribeStatus('idle'), 3000);
     } catch (error) {
-      setSubscribeStatus("idle");
-      alert("Network error. Please try again.");
+      console.error(error);
+      setSubscribeStatus('idle');
+      alert('Network error. Please try again.');
     }
   };
 
@@ -37,12 +40,11 @@ export default function Newsletters() {
     { icon: FiTrendingUp, text: 'Weekly forecasts & predictions' },
     { icon: FiStar, text: 'Exclusive betting insights' },
     { icon: FiMail, text: 'Priority news updates' },
-    { icon: FiCheckCircle, text: 'Early access to features' }
+    { icon: FiCheckCircle, text: 'Early access to features' },
   ];
 
   return (
-    <section id='newsletter' className="relative py-20 sm:py-24 lg:py-32 bg-gradient-to-b from-[#0B0F19] via-[#0B0F19] to-[#0B0F19]/95 overflow-hidden">
-      
+    <section id="newsletter" className="relative py-20 sm:py-24 lg:py-32 bg-gradient-to-b from-[#0B0F19] via-[#0B0F19] to-[#0B0F19]/95 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
         <div className="absolute top-0 left-1/4 w-64 h-64 sm:w-96 sm:h-96 bg-[#0057B8]/20 rounded-full blur-3xl animate-pulse"></div>
@@ -51,17 +53,14 @@ export default function Newsletters() {
       </div>
 
       <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* NEWSLETTER SECTION - CENTERED */}
         <div className="space-y-6 sm:space-y-8 text-center">
-          
           {/* Header */}
           <div className="space-y-4">
             <div className="inline-flex items-center space-x-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-[#FFC527]/20 border border-[#FFC527]/50 rounded-full">
               <FiMail className="text-[#FFC527] text-xs sm:text-sm" />
               <span className="text-[#E0E0E0] text-xs sm:text-sm font-semibold">Stay Connected</span>
             </div>
-            
+
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight px-4">
               Subscribe for
               <br />
@@ -74,7 +73,6 @@ export default function Newsletters() {
               Stay up-to-date with forecasts, posts and predictions.
             </p>
 
-            {/* Accent line */}
             <div className="flex justify-center pt-2">
               <div className="h-1 sm:h-1.5 w-20 sm:w-24 bg-gradient-to-r from-[#FFC527] to-[#0057B8] rounded-full"></div>
             </div>
@@ -83,10 +81,7 @@ export default function Newsletters() {
           {/* Benefits Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 max-w-2xl mx-auto">
             {benefits.map((benefit, index) => (
-              <div 
-                key={index} 
-                className="flex items-center space-x-3 bg-[#FFC527]/10 border border-[#FFC527]/30 rounded-xl p-4 hover:border-[#FFC527]/50 hover:bg-[#FFC527]/15 transition-all duration-300"
-              >
+              <div key={index} className="flex items-center space-x-3 bg-[#FFC527]/10 border border-[#FFC527]/30 rounded-xl p-4 hover:border-[#FFC527]/50 hover:bg-[#FFC527]/15 transition-all duration-300">
                 <benefit.icon className="text-[#FFC527] text-xl sm:text-2xl flex-shrink-0" />
                 <span className="text-[#E0E0E0] text-sm sm:text-base text-left">{benefit.text}</span>
               </div>
@@ -96,17 +91,14 @@ export default function Newsletters() {
           {/* Newsletter Form */}
           <div className="relative bg-gradient-to-br from-[#FFC527]/10 to-[#0B0F19]/50 border border-[#FFC527]/30 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 max-w-2xl mx-auto">
             <div className="absolute inset-0 bg-gradient-to-br from-[#FFC527]/5 to-[#0057B8]/5 rounded-2xl sm:rounded-3xl"></div>
-            
             <div className="relative space-y-6">
-              <label className="block text-white font-semibold text-sm sm:text-base text-left">
-                Your Email Address
-              </label>
+              <label className="block text-white font-semibold text-sm sm:text-base text-left">Your Email Address</label>
 
               <div className="relative">
                 <FiMail className="absolute left-4 sm:left-5 top-1/2 -translate-y-1/2 text-[#E0E0E0]/50 text-lg sm:text-xl" />
                 <input
                   type="email"
-                  name="email"
+                  name="EMAIL"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
@@ -168,7 +160,6 @@ export default function Newsletters() {
               Join 10,000+ subscribers
             </span>
           </div>
-
         </div>
       </div>
     </section>
