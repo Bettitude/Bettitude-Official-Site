@@ -17,6 +17,7 @@ import TOS from './Components/TOS'
 import Legal from './Components/Legal'
 import Newsletters from './Components/Newsletters'
 import Feedback from './Components/Feedback'
+import Partner from './Pages/Partner'
 const App = () => {
   return (
     <>
@@ -37,6 +38,7 @@ const App = () => {
         <Route path='/appointment' element={<Appointment/>} />
         <Route path='/privacy-policy' element={<PrivacyPolicy/>} />
         <Route path='/cookies-policy' element={<Cookies/>} />
+        <Route path='/partner' element={<Partner/>} />
         
 
 

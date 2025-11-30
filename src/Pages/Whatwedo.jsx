@@ -87,22 +87,34 @@ export default function Whatwedo() {
 
   return (
     <section className="relative py-12 sm:py-16 md:py-20 lg:py-24 bg-[#0B0F19] overflow-hidden">
-      {/* Animated background */}
+      
+      {/* Background Image with Softened Overlays */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-0 w-[300px] sm:w-[400px] lg:w-[500px] h-[300px] sm:h-[400px] lg:h-[500px] bg-[#0057B8]/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-0 w-[300px] sm:w-[400px] lg:w-[500px] h-[300px] sm:h-[400px] lg:h-[500px] bg-[#FFC527]/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        <img 
+          src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=1920&q=80"
+          alt="What We Do Background"
+          className="w-full h-full object-cover"
+        />
+        {/* Reduced opacity gradients */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0B0F19]/60 via-[#0B0F19]/50 to-[#0B0F19]/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0057B8]/10 to-[#FFC527]/10"></div>
+      </div>
+
+      {/* Softer animated blobs */}
+      <div className="absolute inset-0">
+        <div className="absolute top-1/4 left-0 w-[300px] sm:w-[400px] lg:w-[500px] h-[300px] sm:h-[400px] lg:h-[500px] bg-[#0057B8]/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-0 w-[300px] sm:w-[400px] lg:w-[500px] h-[300px] sm:h-[400px] lg:h-[500px] bg-[#FFC527]/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
         {/* Section Header */}
         <div className="text-center space-y-4 sm:space-y-6 mb-12 sm:mb-16 lg:mb-20">
-          {/* Badge */}
-          <div className="inline-flex items-center space-x-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-[#0057B8]/20 backdrop-blur-sm border border-[#0057B8]/50 rounded-full">
+          <div className="inline-flex items-center space-x-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-[#0057B8]/20 backdrop-blur-sm border border-[#0057B8]/40 rounded-full">
             <div className="w-2 h-2 bg-[#FFC527] rounded-full animate-pulse"></div>
             <span className="text-[#E0E0E0] text-xs sm:text-sm font-semibold">Our Services</span>
           </div>
 
-          {/* Main Heading */}
           <div className="space-y-3 sm:space-y-4">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight px-4">
               What We Do
@@ -113,7 +125,6 @@ export default function Whatwedo() {
             </p>
           </div>
 
-          {/* Accent line */}
           <div className="flex justify-center">
             <div className="h-1 sm:h-1.5 w-16 sm:w-24 bg-gradient-to-r from-[#FFC527] to-[#0057B8] rounded-full"></div>
           </div>
@@ -127,24 +138,21 @@ export default function Whatwedo() {
               onMouseEnter={() => setActiveCard(index)}
               onMouseLeave={() => setActiveCard(null)}
               onClick={() => setActiveCard(activeCard === index ? null : index)}
-              className="group relative bg-gradient-to-br from-[#0057B8]/10 to-[#0B0F19]/50 backdrop-blur-xl border border-[#0057B8]/30 rounded-xl sm:rounded-2xl p-5 sm:p-6 lg:p-8 hover:border-[#FFC527]/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl cursor-pointer"
-              style={{ 
+              className="group relative bg-gradient-to-br from-[#0057B8]/10 to-[#0B0F19]/40 backdrop-blur-xl border border-[#0057B8]/30 rounded-xl sm:rounded-2xl p-5 sm:p-6 lg:p-8 hover:border-[#FFC527]/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl cursor-pointer"
+              style={{
                 animationDelay: `${index * 100}ms`,
                 boxShadow: activeCard === index ? `0 20px 60px ${service.glowColor}` : 'none'
               }}
             >
-              {/* Glow effect */}
               <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-10 rounded-xl sm:rounded-2xl transition-all duration-500`}></div>
 
-              {/* Icon */}
               <div className="relative mb-4 sm:mb-5 lg:mb-6">
-                <div className={`absolute inset-0 bg-gradient-to-br ${service.color} blur-xl opacity-50 group-hover:opacity-100 transition-opacity duration-500`}></div>
+                <div className={`absolute inset-0 bg-gradient-to-br ${service.color} blur-xl opacity-40 group-hover:opacity-90 transition-opacity duration-500`}></div>
                 <div className={`relative w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-br ${service.color} rounded-lg sm:rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
                   <service.icon className="text-[#0B0F19] text-2xl sm:text-3xl" />
                 </div>
               </div>
 
-              {/* Content */}
               <div className="relative space-y-3 sm:space-y-4">
                 <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white group-hover:text-[#FFC527] transition-colors duration-300">
                   {service.title}
@@ -153,11 +161,10 @@ export default function Whatwedo() {
                   {service.description}
                 </p>
 
-                {/* Features List */}
                 <div className="space-y-1.5 sm:space-y-2 pt-3 sm:pt-4">
                   {service.features.map((feature, idx) => (
-                    <div 
-                      key={idx} 
+                    <div
+                      key={idx}
                       className={`flex items-start space-x-2 text-xs sm:text-sm text-[#E0E0E0] transition-all duration-500 ${
                         activeCard === index ? 'opacity-100' : 'opacity-0 md:opacity-0 md:group-hover:opacity-100'
                       }`}
@@ -169,7 +176,6 @@ export default function Whatwedo() {
                   ))}
                 </div>
 
-                {/* Learn More Link */}
                 <div className="pt-4 sm:pt-6">
                   <a 
                     href={`/services/${service.title.toLowerCase().replace(/\s+/g, '-')}`}
@@ -181,7 +187,6 @@ export default function Whatwedo() {
                 </div>
               </div>
 
-              {/* Corner accent */}
               <div className={`absolute top-0 right-0 w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-20 rounded-bl-full rounded-tr-xl sm:rounded-tr-2xl transition-opacity duration-500`}></div>
             </div>
           ))}
@@ -189,7 +194,7 @@ export default function Whatwedo() {
 
         {/* Bottom CTA */}
         <div className="mt-12 sm:mt-16 lg:mt-20 text-center space-y-6 sm:space-y-8">
-          <div className="bg-gradient-to-r from-[#0057B8]/20 via-[#FFC527]/10 to-[#0057B8]/20 backdrop-blur-xl border border-[#0057B8]/30 rounded-xl sm:rounded-2xl p-6 sm:p-8 md:p-10 lg:p-12">
+          <div className="bg-gradient-to-r from-[#0057B8]/10 via-[#FFC527]/5 to-[#0057B8]/10 backdrop-blur-xl border border-[#0057B8]/30 rounded-xl sm:rounded-2xl p-6 sm:p-8 md:p-10 lg:p-12">
             <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white mb-3 sm:mb-4 px-4">
               Ready to Experience the 
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0057B8] to-[#FFC527]"> Difference?</span>
@@ -199,14 +204,14 @@ export default function Whatwedo() {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
               <a 
-                href="/appointment" 
+                href="/appointment"
                 className="group inline-flex items-center justify-center space-x-2 px-6 sm:px-8 py-3.5 sm:py-4 bg-gradient-to-r from-[#FFC527] to-[#ffb700] text-[#0B0F19] font-bold text-sm sm:text-base rounded-xl hover:shadow-2xl hover:shadow-[#FFC527]/50 hover:scale-105 transition-all duration-300"
               >
                 <span>Get Started Now</span>
                 <FiArrowRight className="text-lg sm:text-xl group-hover:translate-x-1 transition-transform duration-300" />
               </a>
               <a 
-                href="/services" 
+                href="/services"
                 className="inline-flex items-center justify-center space-x-2 px-6 sm:px-8 py-3.5 sm:py-4 bg-[#0057B8]/20 backdrop-blur-sm border-2 border-[#0057B8] text-white font-bold text-sm sm:text-base rounded-xl hover:bg-[#0057B8]/40 transition-all duration-300"
               >
                 <span>View All Services</span>
@@ -214,6 +219,7 @@ export default function Whatwedo() {
             </div>
           </div>
         </div>
+
       </div>
     </section>
   );

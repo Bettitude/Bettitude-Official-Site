@@ -27,7 +27,7 @@ export default function BettitudeHero() {
       subtitle: 'Passion. Glory. Football.'
     },
     {
-      image: 'https://images.unsplash.com/photo-1551958219-acbc608c6377?w=800&q=90',
+      image: 'https://www.channelstv.com/wp-content/uploads/2019/06/Megan-Rapinoe.jpg',
       title: 'Women Football in Our Heart',
       subtitle: 'Equality. Power. Excellence.'
     },
