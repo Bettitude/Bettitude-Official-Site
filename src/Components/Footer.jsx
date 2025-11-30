@@ -86,13 +86,13 @@ export default function Footer() {
     },
     {
       icon: FaTiktok,
-      href: 'https://tiktok.com',
+      href: 'https://www.tiktok.com/@bettitude_',
       label: 'TikTok',
       color: 'hover:bg-[#00F2EA]/20 hover:border-[#00F2EA]/50',
     },
     {
       icon: FaReddit,
-      href: 'https://reddit.com',
+      href: 'https://www.reddit.com/user/bettitude/',
       label: 'Reddit',
       color: 'hover:bg-[#FF4500]/20 hover:border-[#FF4500]/50',
     },

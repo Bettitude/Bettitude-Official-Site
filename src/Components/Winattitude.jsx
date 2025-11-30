@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { FiArrowRight, FiTrendingUp, FiTarget, FiAward } from 'react-icons/fi';
+import React, { useState, useEffect } from "react";
+import { FiArrowRight, FiTrendingUp, FiTarget, FiAward } from "react-icons/fi";
 
 export default function Winattitude() {
   const [currentWord, setCurrentWord] = useState(0);
-  const words = ['at', 'bet'];
+  const words = ["at", "bet"];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -18,7 +18,10 @@ export default function Winattitude() {
       {/* Animated background elements */}
       <div className="absolute inset-0">
         <div className="absolute top-1/2 left-1/4 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] lg:w-[600px] lg:h-[600px] bg-[#0057B8]/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute top-1/2 right-1/4 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] lg:w-[600px] lg:h-[600px] bg-[#FFC527]/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1.5s' }}></div>
+        <div
+          className="absolute top-1/2 right-1/4 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] lg:w-[600px] lg:h-[600px] bg-[#FFC527]/20 rounded-full blur-3xl animate-pulse"
+          style={{ animationDelay: "1.5s" }}
+        ></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -35,11 +38,13 @@ export default function Winattitude() {
             <div className="relative h-20 sm:h-24 md:h-28 lg:h-40 flex items-center justify-center px-4">
               {/* Background glow */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className={`w-full h-full max-w-4xl bg-gradient-to-r ${
-                  words[currentWord] === 'bet' 
-                    ? 'from-[#0057B8]/30 to-[#FFC527]/30' 
-                    : 'from-[#FFC527]/30 to-[#0057B8]/30'
-                } blur-3xl transition-all duration-1000`}></div>
+                <div
+                  className={`w-full h-full max-w-4xl bg-gradient-to-r ${
+                    words[currentWord] === "bet"
+                      ? "from-[#0057B8]/30 to-[#FFC527]/30"
+                      : "from-[#FFC527]/30 to-[#0057B8]/30"
+                  } blur-3xl transition-all duration-1000`}
+                ></div>
               </div>
 
               {/* Animated word container */}
@@ -47,12 +52,17 @@ export default function Winattitude() {
                 {/* Static "titude" part */}
                 <span className="flex items-start">
                   {/* Animated prefix (at/bet) */}
-                  <span 
-                    className="relative inline-block mr-[-8px] sm:mr-[-12px] lg:mr-[-15px]" 
-                    style={{ 
-                      width: words[currentWord] === 'bet' 
-                        ? 'clamp(2.5rem, 8vw, 7.2rem)' 
-                        : 'clamp(1.6rem, 5vw, 4.8rem)' 
+                  <span
+                    className={`relative inline-block transition-all duration-700 ${
+                      words[currentWord] === "bet"
+                        ? "mr-[-8px] sm:mr-[-12px] lg:mr-[95px]" // Keep bet position (current)
+                        : "mr-[4px] sm:mr-[8px] lg:mr-[50px]" // Move at closer to titude
+                    }`}
+                    style={{
+                      width:
+                        words[currentWord] === "bet"
+                          ? "clamp(2.5rem, 8vw, 7.2rem)"
+                          : "clamp(1.6rem, 5vw, 4.8rem)",
                     }}
                   >
                     {words.map((word, index) => (
@@ -60,22 +70,25 @@ export default function Winattitude() {
                         key={word}
                         className={`absolute left-0 transition-all duration-700 ease-in-out ${
                           index === currentWord
-                            ? 'opacity-100 translate-y-0 scale-100'
-                            : 'opacity-0 translate-y-4 sm:translate-y-8 scale-95'
+                            ? "opacity-100 translate-y-0 scale-100"
+                            : "opacity-0 translate-y-4 sm:translate-y-8 scale-95"
                         } ${
-                          word === 'bet'
-                            ? 'text-transparent bg-clip-text bg-gradient-to-r from-[#0057B8] to-[#FFC527]'
-                            : 'text-transparent bg-clip-text bg-gradient-to-r from-[#FFC527] to-[#ffb700]'
+                          word === "bet"
+                            ? "text-transparent bg-clip-text bg-gradient-to-r from-[#0057B8] to-[#FFC527]"
+                            : "text-transparent bg-clip-text bg-gradient-to-r from-[#FFC527] to-[#ffb700]"
                         }`}
                         style={{
-                          transform: index === currentWord ? 'translateY(0)' : 'translateY(1rem)'
+                          transform:
+                            index === currentWord
+                              ? "translateY(0)"
+                              : "translateY(1rem)",
                         }}
                       >
                         {word}
                       </span>
                     ))}
                   </span>
-                  
+
                   {/* Static "titude" */}
                   <span className="text-white">titude</span>
                 </span>
@@ -91,9 +104,10 @@ export default function Winattitude() {
           {/* Description */}
           <div className="max-w-3xl mx-auto space-y-4 sm:space-y-6 px-4">
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-[#E0E0E0] leading-relaxed">
-              At Bettitude, we believe in winning with the right mindset. Whether it's 
-              <span className="text-[#FFC527] font-semibold"> attitude</span> or 
-              <span className="text-[#0057B8] font-semibold"> Bettitude</span>, 
+              At Bettitude, we believe in winning with the right mindset.
+              Whether it's
+              <span className="text-[#FFC527] font-semibold"> attitude</span> or
+              <span className="text-[#0057B8] font-semibold"> Bettitude</span>,
               success comes from passion, strategy, and determination.
             </p>
           </div>
@@ -103,7 +117,7 @@ export default function Winattitude() {
             {/* Card 1 */}
             <div className="relative bg-gradient-to-br from-[#FFC527]/10 to-[#0B0F19]/50 backdrop-blur-xl border border-[#FFC527]/30 rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover:border-[#FFC527]/50 hover:scale-105 transition-all duration-500 group">
               <div className="absolute inset-0 bg-gradient-to-br from-[#FFC527]/0 to-[#FFC527]/0 group-hover:from-[#FFC527]/20 group-hover:to-[#FFC527]/10 rounded-2xl sm:rounded-3xl transition-all duration-500"></div>
-              
+
               <div className="relative space-y-3 sm:space-y-4">
                 {/* Modern icon badge */}
                 <div className="flex items-center justify-between">
@@ -117,10 +131,13 @@ export default function Winattitude() {
                     01
                   </div>
                 </div>
-                
-                <h3 className="text-xl sm:text-2xl font-bold text-white">Winning Mindset</h3>
+
+                <h3 className="text-xl sm:text-2xl font-bold text-white">
+                  Winning Mindset
+                </h3>
                 <p className="text-sm sm:text-base text-[#E0E0E0] leading-relaxed">
-                  Cultivate the attitude of a champion with data-driven insights and expert guidance
+                  Cultivate the attitude of a champion with data-driven insights
+                  and expert guidance
                 </p>
               </div>
             </div>
@@ -128,7 +145,7 @@ export default function Winattitude() {
             {/* Card 2 */}
             <div className="relative bg-gradient-to-br from-[#0057B8]/10 to-[#0B0F19]/50 backdrop-blur-xl border border-[#0057B8]/30 rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover:border-[#FFC527]/50 hover:scale-105 transition-all duration-500 group">
               <div className="absolute inset-0 bg-gradient-to-br from-[#0057B8]/0 to-[#0057B8]/0 group-hover:from-[#0057B8]/20 group-hover:to-[#0057B8]/10 rounded-2xl sm:rounded-3xl transition-all duration-500"></div>
-              
+
               <div className="relative space-y-3 sm:space-y-4">
                 {/* Modern icon badge */}
                 <div className="flex items-center justify-between">
@@ -142,10 +159,13 @@ export default function Winattitude() {
                     02
                   </div>
                 </div>
-                
-                <h3 className="text-xl sm:text-2xl font-bold text-white">Smart Strategies</h3>
+
+                <h3 className="text-xl sm:text-2xl font-bold text-white">
+                  Smart Strategies
+                </h3>
                 <p className="text-sm sm:text-base text-[#E0E0E0] leading-relaxed">
-                  Win with Bettitude by leveraging our proven algorithms and expert analysis
+                  Win with Bettitude by leveraging our proven algorithms and
+                  expert analysis
                 </p>
               </div>
             </div>
@@ -153,7 +173,7 @@ export default function Winattitude() {
             {/* Card 3 */}
             <div className="relative bg-gradient-to-br from-[#FFC527]/10 to-[#0B0F19]/50 backdrop-blur-xl border border-[#FFC527]/30 rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover:border-[#FFC527]/50 hover:scale-105 transition-all duration-500 group sm:col-span-2 lg:col-span-1">
               <div className="absolute inset-0 bg-gradient-to-br from-[#FFC527]/0 to-[#FFC527]/0 group-hover:from-[#FFC527]/20 group-hover:to-[#FFC527]/10 rounded-2xl sm:rounded-3xl transition-all duration-500"></div>
-              
+
               <div className="relative space-y-3 sm:space-y-4">
                 {/* Modern icon badge */}
                 <div className="flex items-center justify-between">
@@ -167,10 +187,13 @@ export default function Winattitude() {
                     03
                   </div>
                 </div>
-                
-                <h3 className="text-xl sm:text-2xl font-bold text-white">Consistent Results</h3>
+
+                <h3 className="text-xl sm:text-2xl font-bold text-white">
+                  Consistent Results
+                </h3>
                 <p className="text-sm sm:text-base text-[#E0E0E0] leading-relaxed">
-                  Transform your attitude into success with our comprehensive betting intelligence
+                  Transform your attitude into success with our comprehensive
+                  betting intelligence
                 </p>
               </div>
             </div>
