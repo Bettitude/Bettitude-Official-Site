@@ -55,8 +55,8 @@ export default function Winattitude() {
                   <span
                     className={`relative inline-block transition-all duration-700 ${
                       words[currentWord] === "bet"
-                        ? "mr-[-8px] sm:mr-[-12px] lg:mr-[95px]" // Keep bet position (current)
-                        : "mr-[4px] sm:mr-[8px] lg:mr-[50px]" // Move at closer to titude
+                        ? "mr-[20px] sm:mr-[-12px] lg:mr-[95px]" // Keep bet position (current)
+                        : "mr-[11px] sm:mr-[8px] lg:mr-[50px]" // Move at closer to titude
                     }`}
                     style={{
                       width:
