@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FiMail, FiCheckCircle, FiArrowRight, FiStar, FiTrendingUp } from 'react-icons/fi';
+import { FaTelegram } from 'react-icons/fa';
 
 export default function Newsletters() {
   const [email, setEmail] = useState('');
@@ -141,6 +142,37 @@ export default function Newsletters() {
               <p className="text-xs sm:text-sm text-[#E0E0E0]/70 text-center">
                 We respect your privacy. Unsubscribe anytime.
               </p>
+            </div>
+          </div>
+
+          {/* Telegram Channel CTA */}
+          <div className="relative bg-gradient-to-br from-[#0057B8]/10 to-[#0B0F19]/50 border border-[#0057B8]/30 rounded-2xl sm:rounded-3xl p-6 sm:p-8 max-w-2xl mx-auto hover:border-[#0057B8]/50 transition-all duration-300 group">
+            <div className="absolute inset-0 bg-gradient-to-br from-[#0057B8]/0 to-[#0057B8]/0 group-hover:from-[#0057B8]/5 group-hover:to-[#FFC527]/5 rounded-2xl sm:rounded-3xl transition-all duration-500"></div>
+            
+            <div className="relative flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6">
+              <div className="flex items-center space-x-4 text-center sm:text-left">
+                <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-[#0088cc] to-[#006699] rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                  <FaTelegram className="text-white text-3xl sm:text-4xl" />
+                </div>
+                <div>
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-1">
+                    Join Our Telegram Channel
+                  </h3>
+                  <p className="text-sm sm:text-base text-[#E0E0E0]/80">
+                    Get instant updates, tips & exclusive content
+                  </p>
+                </div>
+              </div>
+              
+              <a
+                href="https://t.me/your_channel"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group/btn flex items-center space-x-2 px-5 sm:px-6 py-3 sm:py-3.5 bg-gradient-to-r from-[#0088cc] to-[#006699] text-white rounded-xl font-bold hover:shadow-2xl hover:shadow-[#0088cc]/50 hover:scale-105 transition-all duration-300 whitespace-nowrap"
+              >
+                <span>Join Channel</span>
+                <FiArrowRight className="text-lg group-hover/btn:translate-x-1 transition-transform duration-300" />
+              </a>
             </div>
           </div>
 

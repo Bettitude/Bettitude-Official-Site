@@ -11,8 +11,9 @@ import {
   FiArrowUp,
   FiTrendingUp,
   FiHeart,
+
 } from 'react-icons/fi';
-import { FaReddit, FaTiktok } from 'react-icons/fa';
+import { FaReddit, FaTiktok,FaTelegramPlane } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import Betlogo from "../assets/Betlogo.png";
 
@@ -32,6 +33,7 @@ export default function Footer() {
       { name: 'BettiSportsblog', href: 'https://BettiSportsblog.com', external: true },
       { name: 'ProBetPicks', href: 'https://ProBetPicks.com', external: true },
       { name: 'BettiScores', href: 'https://BettiScores.com', external: true },
+      { name: 'SportDisandDat', href: 'https://sportdisanddat', external: true }
     ],
     services: [
       { name: 'Betting Analytics', href: '/services/analytics' },
@@ -40,8 +42,8 @@ export default function Footer() {
       { name: 'Consultancy', href: '/services/consultancy' },
     ],
     resources: [
-      { name: 'Blog', href: '/blog' },
-      { name: 'Help Center', href: '/help' },
+      // { name: 'Blog', href: '/blog' },
+      // { name: 'Help Center', href: '/help' },
       { name: 'Community', href: '/community' },
       { name: 'Feedback', href: '/feedback' },
     ],
@@ -94,6 +96,12 @@ export default function Footer() {
       icon: FaReddit,
       href: 'https://www.reddit.com/user/bettitude/',
       label: 'Reddit',
+      color: 'hover:bg-[#FF4500]/20 hover:border-[#FF4500]/50',
+    },
+    {
+      icon: FaTelegramPlane,
+      href: 'https://www.reddit.com/user/bettitude/',
+      label: 'Telegra,',
       color: 'hover:bg-[#FF4500]/20 hover:border-[#FF4500]/50',
     },
   ];

@@ -1,39 +1,39 @@
 import React, { useState } from 'react';
-import { FiHeart, FiCoffee, FiDollarSign, FiTarget, FiUsers, FiTrendingUp, FiCheckCircle, FiArrowRight, FiAward, FiMonitor } from 'react-icons/fi';
+import { FiHeart, FiCoffee, FiDollarSign, FiTarget, FiUsers, FiTrendingUp, FiCheckCircle, FiArrowRight, FiAward, FiMonitor, FiServer, FiDatabase, FiZap } from 'react-icons/fi';
 
 export default function Support() {
   const fundingOptions = [
     {
       icon: FiTarget,
       title: 'GoFundMe',
-      description: 'Support in achieving our goal to raise funding on GoFundMe',
+      description: 'Make a targeted impact on major upgrades like server enhancements and new data API integrations',
       action: 'Support Campaign',
       color: 'from-[#02A95C] to-[#028a4c]',
-      link: '#gofundme'
+      link: 'https://gofund.me/a05de651d'
     },
     {
       icon: FiDollarSign,
-      title: 'Donate',
-      description: 'Donate to support our work and keep the beautiful contents coming via Stripe',
+      title: 'Stripe Donation',
+      description: 'Simple, secure one-time support using any major credit or debit card',
       action: 'Make Donation',
       color: 'from-[#635BFF] to-[#4F46E5]',
-      link: '#donate'
+      link: 'https://donate.stripe.com/5kQ7sLclZ0iH1YL1Ws7Vm01'
     },
     {
       icon: FiUsers,
-      title: 'Support',
-      description: 'Support our cause to bring you the best unbiased contents via Patreon',
+      title: 'Patreon',
+      description: 'Become a long-term patron with monthly recurring support for sustained growth',
       action: 'Become Patron',
       color: 'from-[#FF424D] to-[#E63946]',
-      link: '#support'
+      link: 'https://patreon.com/Bettisportsblog?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink'
     },
     {
       icon: FiCoffee,
-      title: 'Buy Us A Coffee',
-      description: 'Every tip matters. Support our writers, editors and everyone with a Cup of Coffee',
+      title: 'Buy Me A Coffee',
+      description: 'Show immediate appreciation with a small token of gratitude to the team',
       action: 'Buy Coffee',
       color: 'from-[#FFDD00] to-[#FFC527]',
-      link: '#coffee'
+      link: 'https://buymeacoffee.com/bettisportsblog'
     }
   ];
 
@@ -53,6 +53,24 @@ export default function Support() {
       action: 'Start Advertising',
       color: 'from-[#FFC527] to-[#ffb700]',
       link: '#advertise'
+    }
+  ];
+
+  const investments = [
+    {
+      icon: FiDatabase,
+      title: 'Premium Data Feeds',
+      description: 'Licensing the fastest, most accurate, and diverse data streams'
+    },
+    {
+      icon: FiServer,
+      title: 'Server & Infrastructure',
+      description: 'Maintaining powerful, low-latency servers for real-time analysis'
+    },
+    {
+      icon: FiZap,
+      title: 'Feature Development',
+      description: 'Funding our team to build innovative tools and refine user experience'
     }
   ];
 
@@ -80,20 +98,76 @@ export default function Support() {
             </div>
 
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-black text-white leading-tight px-2">
-              Join Our Cause As We
+              Powering
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFC527] to-[#ffb700]">
-                Raise Funding
+                Bettitude's Future
               </span>
             </h1>
 
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed px-4">
-              Kindly support us to keep the Lights on and bring you the best contents there is...
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed px-4">
+              Bettitude is dedicated to providing high-quality, independent, data-driven analysis and tools, free of charge. Your direct support keeps us independent, innovative, and focused solely on serving you.
             </p>
 
             <div className="flex justify-center">
               <div className="h-1 sm:h-1.5 w-24 sm:w-32 bg-gradient-to-r from-[#FFC527] to-[#0057B8] rounded-full"></div>
             </div>
+          </div>
+
+          {/* Why Your Support Matters Section */}
+          <div className="mb-12 sm:mb-16 lg:mb-20 max-w-5xl mx-auto">
+            <div className="relative bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 overflow-hidden hover:border-[#FFC527]/50 transition-all duration-500">
+              <div className="absolute top-0 right-0 w-32 h-32 sm:w-48 sm:h-48 bg-[#FFC527]/20 rounded-full blur-3xl"></div>
+              <div className="absolute bottom-0 left-0 w-32 h-32 sm:w-48 sm:h-48 bg-[#0057B8]/20 rounded-full blur-3xl"></div>
+
+              <div className="relative space-y-4 sm:space-y-6">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white text-center">
+                  Why Your Support
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFC527] to-[#ffb700]"> Matters</span>
+                </h2>
+
+                <p className="text-sm sm:text-base md:text-lg text-white/90 leading-relaxed text-center max-w-3xl mx-auto">
+                  Bettitude was founded on the principle of transparency and empowerment. We believe everyone deserves access to the best analytical tools and insights without facing paywalls or intrusive, biased advertising.
+                </p>
+
+                <p className="text-sm sm:text-base text-white/80 leading-relaxed text-center">
+                  Running a sophisticated data platform like Bettitude requires significant and ongoing investment in:
+                </p>
+
+                {/* Investment Cards */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mt-6 sm:mt-8">
+                  {investments.map((investment, idx) => (
+                    <div
+                      key={idx}
+                      className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl sm:rounded-2xl p-4 sm:p-6 hover:border-[#FFC527]/50 hover:bg-white/10 transition-all duration-300"
+                    >
+                      <div className="flex flex-col items-center text-center space-y-3">
+                        <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-[#FFC527] to-[#ffb700] rounded-lg sm:rounded-xl flex items-center justify-center">
+                          <investment.icon className="text-[#0B0F19] text-xl sm:text-2xl" />
+                        </div>
+                        <h3 className="text-base sm:text-lg font-bold text-white">{investment.title}</h3>
+                        <p className="text-xs sm:text-sm text-white/70 leading-relaxed">{investment.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <p className="text-sm sm:text-base md:text-lg text-white/90 leading-relaxed text-center max-w-3xl mx-auto pt-4 font-semibold">
+                  Your voluntary contribution is an investment in our independence and a direct vote for a platform dedicated to the user.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Ways to Support Header */}
+          <div className="text-center mb-8 sm:mb-12 space-y-3 sm:space-y-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white">
+              Ways to Support
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0057B8] to-[#FFC527]"> Bettitude</span>
+            </h2>
+            <p className="text-sm sm:text-base md:text-lg text-white/80 max-w-3xl mx-auto px-4">
+              Choose the method that works best for you. Every single contribution makes a difference.
+            </p>
           </div>
 
           {/* Funding Options Grid */}
@@ -118,7 +192,7 @@ export default function Support() {
                     <h3 className="text-xl sm:text-2xl font-black text-white group-hover:text-[#FFC527] transition-colors duration-300">
                       {option.title}
                     </h3>
-                    <p className="text-sm sm:text-base text-white/80 leading-relaxed min-h-[60px] sm:min-h-[72px]">
+                    <p className="text-sm sm:text-base text-white/80 leading-relaxed min-h-[80px] sm:min-h-[96px]">
                       {option.description}
                     </p>
                   </div>
@@ -126,6 +200,8 @@ export default function Support() {
                   {/* Button */}
                   <a
                     href={option.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className={`group/btn flex items-center justify-center space-x-2 w-full px-4 sm:px-6 py-3 sm:py-4 bg-gradient-to-r ${option.color} text-white text-sm sm:text-base font-bold rounded-lg sm:rounded-xl hover:shadow-2xl transition-all duration-300 hover:scale-105`}
                   >
                     <span>{option.action}</span>
@@ -134,6 +210,19 @@ export default function Support() {
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Thank You Message */}
+          <div className="mt-12 sm:mt-16 lg:mt-20 text-center">
+            <div className="inline-block bg-gradient-to-r from-[#0057B8]/20 via-[#FFC527]/20 to-[#0057B8]/20 backdrop-blur-xl border border-[#FFC527]/30 rounded-2xl sm:rounded-3xl px-6 sm:px-10 lg:px-12 py-4 sm:py-6 lg:py-8">
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white">
+                From all of us at <span className="text-[#FFC527]">Bettitude</span>, thank you.
+                <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFC527] to-[#ffb700]">
+                  Your support is our success.
+                </span>
+              </p>
+            </div>
           </div>
         </div>
       </div>

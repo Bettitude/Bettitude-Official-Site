@@ -13,42 +13,47 @@ import {
 } from "react-icons/fi";
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-  const [submitStatus, setSubmitStatus] = useState("idle"); // idle, loading, success
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setSubmitStatus("loading");
+ const [formData, setFormData] = useState({
+  name: "",
+  email: "",
+  message: "",
+});
+const [submitStatus, setSubmitStatus] = useState("idle"); // idle, loading, success
 
-    try {
-      const response = await fetch("https://formspree.io/f/xovgjvlr", {
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setSubmitStatus("loading");
+
+  try {
+    const response = await fetch(
+      "",
+      {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        setSubmitStatus("success"); // <-- use setSubmitStatus
-        setFormData({ name: "", email: "", message: "" });
-        setTimeout(() => setSubmitStatus("idle"), 3000);
-      } else {
-        throw new Error("Form submission failed");
       }
-    } catch (error) {
-      console.error(error);
-      setSubmitStatus("error");
-    }
-  };
+    );
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
+    if (response.ok) {
+      setSubmitStatus("success");
+      setFormData({ name: "", email: "", message: "" });
+      setTimeout(() => setSubmitStatus("idle"), 3000);
+    } else {
+      throw new Error("Form submission failed");
+    }
+  } catch (error) {
+    console.error(error);
+    setSubmitStatus("error");
+  }
+};
+
+const handleChange = (e) => {
+  setFormData({
+    ...formData,
+    [e.target.name]: e.target.value,
+  });
+};
+
 
   const contactInfo = [
     {

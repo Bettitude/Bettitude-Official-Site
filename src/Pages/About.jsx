@@ -23,26 +23,59 @@ export default function About() {
   ];
 
   const faqs = [
-    {
-      question: 'What is Bettitude?',
-      answer: 'Bettitude Inc. is a leading sports data technology company dedicated to transforming the way fans engage with sports through the power of statistics, content, and entertainment. We provide accurate predictions and advisory services through expert analysis, forecasts, tips and statistics based on strategies, calculated algorithms and historical data.'
-    },
-    {
-      question: 'How guaranteed are our tips?',
-      answer: 'Our predictions are powered by advanced AI algorithms and expert analysis, achieving a 95% accuracy rate. While no prediction can be 100% guaranteed, our track record speaks for itself. We leverage a blend of API data analysis, predictive models, and expert human insight to provide high-quality picks and comprehensive risk management guidance.'
-    },
-    {
-      question: 'What exactly is our strategy recommendation?',
-      answer: 'Our strategy recommendations combine statistical analysis, historical data, team performance metrics, and real-time factors powered by sophisticated AI and predictive modeling. We turn betting from a game of chance into a strategic pursuit by providing comprehensive insights across various sports and markets.'
-    },
-    {
-      question: 'How many markets do we cover?',
-      answer: 'We cover multiple markets including football, basketball, tennis, and more. Our flagship products like BettiScores, BettiSports Blog, Fantasy Sports, and ProBetPicks provide insights across major leagues and tournaments worldwide.'
-    },
-    {
-      question: 'How can Bettitude Admin assistance be reached?',
-      answer: 'You can reach our support team 24/7 through live chat, email at hello@bettitude.com, or by calling our hotline. We are committed to providing exceptional customer service and support.'
-    }
+    
+  {
+    "question": "What is Bettitude and what services do you offer?",
+    "answer": "Bettitude Inc. is a sports data technology company focused on enhancing sports entertainment through expert analysis, real-time statistics, and proprietary technology. Our key products include BettiScores for real-time scores and player data, ProBetPicks for data-driven betting analysis, and BettiSports Blog for strategic sports content."
+  },
+  {
+    "question": "Who is Bettitude's content and service designed for?",
+    "answer": "Our services are built for sports lovers who value data. This includes passionate fans who want deeper insights, fantasy sports players who need reliable statistics, and sports bettors seeking disciplined, analytical decision-making."
+  },
+  {
+    "question": "Is Bettitude currently free to use?",
+    "answer": "Yes. Most of Bettitude's core services, including BettiScores, foundational ProBetPicks content, and all BettiSports Blog articles, are currently free."
+  },
+  {
+    "question": "How does Bettitude sustain its operations if the services are free?",
+    "answer": "We sustain operations through affiliate partnerships, advertising and sponsorships, as well as data licensing and consultancy services provided to B2B clients."
+  },
+  {
+    "question": "Will Bettitude ever become a paid service?",
+    "answer": "Yes. We plan to introduce paid subscription tiers within the next one to two years to support the expansion of our AI models, real-time data feeds, and expert analyst team."
+  },
+  {
+    "question": "What will happen to the free services when paid subscriptions are introduced?",
+    "answer": "We will maintain a strong free tier. BettiScores will remain mostly free, BettiSports Blog will keep offering high-quality free content, and ProBetPicks will introduce a Premium Tier while preserving basic free insights."
+  },
+  {
+    "question": "What features will be included in future paid tiers?",
+    "answer": "Paid tiers will include exclusive predictive models, deeper statistical data, an ad-free experience, and direct access to expert analysts, among other premium features."
+  },
+  {
+    "question": "Where does the data on BettiScores come from, and how fast is it?",
+    "answer": "BettiScores sources data from multiple industry-leading high-speed APIs. Our internal aggregation and cleaning systems ensure that updates are delivered in near real-time with high accuracy."
+  },
+  {
+    "question": "Are ProBetPicks guaranteed to win?",
+    "answer": "No. While ProBetPicks uses advanced statistical models and expert reviews to provide high-probability predictions, no outcome in sports is guaranteed. We emphasize long-term profitability and risk management."
+  },
+  {
+    "question": "How many markets does ProBetPicks cover?",
+    "answer": "ProBetPicks covers multiple markets including Goals, Corners, Winnings, and more. Our platforms—BettiScores, BettiSports Blog, Fantasy Sports, and ProBetPicks—provide insights across major leagues worldwide."
+  },
+  {
+    "question": "What exactly is our strategy recommendation?",
+    "answer": "Our strategy recommendations combine statistical analysis, historical performance, team metrics, and real-time factors powered by advanced AI predictive modeling to transform predictions into strategic insights."
+  },
+  {
+    "question": "How guaranteed are ProBetPicks tips and predictions?",
+    "answer": "Our predictions are powered by advanced AI models and expert analysis, reaching up to 95% accuracy. While no prediction is 100% guaranteed, our approach delivers high-quality, data-backed insights."
+  },
+  {
+    "question": "How can Bettitude Admin assistance be reached?",
+    "answer": "You can contact our support team 24/7 via live chat, email at hello@bettitude.com, or by calling our hotline."
+  }
   ];
 
   const stats = [
@@ -96,13 +129,13 @@ export default function About() {
           </h1>
 
           <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#0057B8] to-[#FFC527] px-4">
-            To build a digitally unified,
+            To empower sports fans with smarter,
             <br />
-            global sports audience
+            transparent and entertaining insights
           </p>
 
           <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[#E0E0E0] max-w-4xl mx-auto leading-relaxed px-4">
-            Bettitude Inc. is a leading sports data technology company dedicated to transforming the way fans engage with sports through the power of statistics, content, and entertainment. Reaching over 50,000+ users every month, our platforms create unmissable experiences through market-leading editorial, data, analytics, and AI-powered insights.
+            through sports data technology for analytics and engaging media. Bettitude Inc. is a leading sports data technology company dedicated to transforming the way fans engage with sports through the power of statistics, content, and entertainment. Reaching over 50,000+ users every month, our platforms create unmissable experiences through market-leading editorial, data, analytics, and AI-powered insights.
           </p>
 
           <div className="flex justify-center">
@@ -186,7 +219,7 @@ export default function About() {
         </div>
       </div>
 
-      {/* Services Value Proposition */}
+      {/* Vision & Value Proposition Section */}
       <div className="relative py-12 sm:py-16 lg:py-24 bg-gradient-to-b from-transparent via-[#0057B8]/5 to-transparent">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-0 left-1/4 w-48 h-48 sm:w-64 sm:h-64 lg:w-96 lg:h-96 bg-[#0057B8]/20 rounded-full blur-3xl"></div>
@@ -194,10 +227,51 @@ export default function About() {
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Vision Statement */}
+          <div className="text-center mb-12 sm:mb-16 lg:mb-20 space-y-4 sm:space-y-6">
+            <div className="inline-flex items-center space-x-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-[#0057B8]/20 backdrop-blur-sm border border-[#0057B8]/50 rounded-full">
+              <FiTarget className="text-[#FFC527] text-xs sm:text-sm" />
+              <span className="text-[#E0E0E0] text-xs sm:text-sm font-semibold">Our Vision</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white px-4 leading-tight">
+              To become the world's most
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0057B8] to-[#FFC527]"> trusted and entertaining platform</span>
+            </h2>
+            <p className="text-lg sm:text-xl md:text-2xl text-[#E0E0E0] max-w-3xl mx-auto px-4">
+              for sports predictions intelligence, entertainment and fan engagement
+            </p>
+          </div>
+
+          {/* Value Proposition Card */}
+          <div className="mb-12 sm:mb-16 lg:mb-20 max-w-5xl mx-auto">
+            <div className="relative bg-gradient-to-br from-[#FFC527]/20 via-[#0057B8]/20 to-[#FFC527]/10 backdrop-blur-xl border-2 border-[#FFC527]/40 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 overflow-hidden group hover:border-[#0057B8]/60 transition-all duration-500">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#0057B8]/0 to-[#0057B8]/0 group-hover:from-[#0057B8]/20 group-hover:to-[#FFC527]/20 transition-all duration-500"></div>
+              
+              <div className="relative text-center space-y-4 sm:space-y-6">
+                <div className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-gradient-to-br from-[#FFC527] to-[#ffb700] rounded-xl sm:rounded-2xl shadow-lg shadow-[#FFC527]/30">
+                  <FiAward className="text-[#0B0F19] text-2xl sm:text-3xl lg:text-4xl" />
+                </div>
+                
+                <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black text-white">
+                  Our Value Proposition
+                </h3>
+                
+                <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-[#E0E0E0] leading-relaxed max-w-3xl mx-auto">
+                  We combine <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFC527] to-[#ffb700] font-bold">API & AI-driven analytics</span>, expert insights, and deep sports data to give bettors a <span className="text-white font-semibold">competitive edge</span>
+                </p>
+
+                <div className="flex justify-center pt-2">
+                  <div className="h-1 w-24 bg-gradient-to-r from-[#0057B8] via-[#FFC527] to-[#0057B8] rounded-full"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Services Section */}
           <div className="text-center mb-8 sm:mb-12 lg:mb-16 space-y-3 sm:space-y-4">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white px-4">
-              Our Services &
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0057B8] to-[#FFC527]"> Value Proposition</span>
+              {/* Our Services & */}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0057B8] to-[#FFC527]">Our Services</span>
             </h2>
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[#E0E0E0] max-w-3xl mx-auto px-4">
               Creating value for users, subscribers, and followers through our flagship products
@@ -281,7 +355,7 @@ export default function About() {
                 key={index}
                 className="bg-gradient-to-br from-[#0057B8]/10 to-[#0B0F19]/50 backdrop-blur-xl border border-[#0057B8]/30 rounded-xl sm:rounded-2xl overflow-hidden hover:border-[#FFC527]/50 transition-all duration-300"
               >
-                <button
+               <button
                   onClick={() => setOpenFaq(openFaq === index ? null : index)}
                   className="w-full flex items-center justify-between p-4 sm:p-5 lg:p-6 text-left"
                 >

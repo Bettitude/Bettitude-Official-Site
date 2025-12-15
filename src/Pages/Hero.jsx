@@ -212,8 +212,8 @@ export default function BettitudeHero() {
                   <FiUsers className="relative text-[#FFC527] text-2xl sm:text-3xl" />
                 </div>
                 <div>
-                  <p className="text-white font-black text-lg sm:text-xl lg:text-2xl">25M+</p>
-                  <p className="text-[#E0E0E0] text-xs sm:text-sm">Global Fans</p>
+                  <p className="text-white font-black text-lg sm:text-xl lg:text-2xl">250K+</p>
+                  <p className="text-[#E0E0E0] text-xs sm:text-sm">Global Reach</p>
                 </div>
               </div>
               

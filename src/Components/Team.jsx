@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { FiLinkedin, FiTwitter, FiMail, FiUsers, FiAward, FiTrendingUp, FiHeart } from 'react-icons/fi';
+import Profile from '../assets/Profile.jpg'
+
 
 export default function TeamPage() {
   const [hoveredMember, setHoveredMember] = useState(null);
@@ -8,7 +10,8 @@ export default function TeamPage() {
     {
       name: 'John Doe',
       role: 'CEO & Founder',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80',
+      image: Profile,
+      // image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80',
       bio: 'Visionary leader with 15+ years in sports analytics and technology. Founded Bettitude to revolutionize sports entertainment.',
       social: {
         linkedin: '#',
@@ -19,7 +22,8 @@ export default function TeamPage() {
     {
       name: 'Sarah Johnson',
       role: 'Chief Technology Officer',
-      image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80',
+      // image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80',
+      image: Profile,
       bio: 'Tech innovator specializing in AI and machine learning. Leading our data science and engineering teams.',
       social: {
         linkedin: '#',
@@ -30,7 +34,8 @@ export default function TeamPage() {
     {
       name: 'Michael Chen',
       role: 'Chief Operating Officer',
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80',
+      // image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80',
+      image: Profile,
       bio: 'Operations expert with deep sports industry knowledge. Ensuring excellence in everything we deliver.',
       social: {
         linkedin: '#',
@@ -49,19 +54,22 @@ export default function TeamPage() {
         {
           name: 'David Martinez',
           role: 'Head of Analytics',
-          image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80',
+          // image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80',
+          image: Profile,
           expertise: 'Statistical Modeling, Sports Data'
         },
         {
           name: 'Emma Wilson',
           role: 'Senior Data Scientist',
-          image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80',
+          // image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80',
+          image: Profile,
           expertise: 'Machine Learning, Predictions'
         },
         {
           name: 'James Brown',
           role: 'Sports Analyst',
-          image: 'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=400&q=80',
+          // image: 'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=400&q=80',
+          image: Profile,
           expertise: 'Football Analytics, Research'
         }
       ]
@@ -74,19 +82,22 @@ export default function TeamPage() {
         {
           name: 'Olivia Davis',
           role: 'Head of Content',
-          image: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400&q=80',
+          // image: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400&q=80',
+          image: Profile,
           expertise: 'Sports Journalism, Editorial'
         },
         {
           name: 'Liam Anderson',
           role: 'Senior Sports Writer',
-          image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&q=80',
+          // image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&q=80',
+          image: Profile,
           expertise: 'Match Analysis, Previews'
         },
         {
           name: 'Sophia Garcia',
           role: 'Video Producer',
-          image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&q=80',
+          // image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&q=80',
+          image: Profile,
           expertise: 'Video Content, Social Media'
         }
       ]
@@ -99,19 +110,22 @@ export default function TeamPage() {
         {
           name: 'Alex Turner',
           role: 'Lead Engineer',
-          image: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=400&q=80',
+          // image: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=400&q=80',
+          image: Profile,
           expertise: 'Full Stack, Architecture'
         },
         {
           name: 'Nina Patel',
           role: 'Frontend Developer',
-          image: 'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=400&q=80',
+          // image: 'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=400&q=80',
+          image: Profile,
           expertise: 'React, UI/UX Development'
         },
         {
           name: 'Ryan Cooper',
           role: 'Backend Developer',
-          image: 'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=400&q=80',
+          // image: 'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=400&q=80',
+          image: Profile,
           expertise: 'Node.js, Database Design'
         }
       ]
