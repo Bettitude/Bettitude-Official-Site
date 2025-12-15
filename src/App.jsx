@@ -19,6 +19,7 @@ import Newsletters from './Components/Newsletters'
 import Feedback from './Components/Feedback'
 import Partner from './Pages/Partner'
 import FooterService from './Pages/FooterService'
+import Sitemap from './Pages/SiteMap'
 const App = () => {
   return (
     <>
@@ -41,7 +42,7 @@ const App = () => {
         <Route path='/cookies-policy' element={<Cookies/>} />
         <Route path='/partner' element={<Partner/>} />
         <Route path='/services' element={<FooterService/>} />
-        
+        <Route path='/sitemap' element={<Sitemap/>} />
 
 
 

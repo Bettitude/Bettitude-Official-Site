@@ -110,7 +110,7 @@ export default function BettitudeHero() {
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center min-h-[calc(100vh-8rem)] sm:min-h-[calc(100vh-7rem)] lg:min-h-[85vh]">
           {/* Left Content */}
           <div className="space-y-6 sm:space-y-8 lg:space-y-10">
-            <div className="inline-flex items-center space-x-2 sm:space-x-3 px-3 sm:px-4 lg:px-5 py-2 sm:py-2.5 lg:py-3 bg-gradient-to-r from-[#0057B8]/30 to-[#FFC527]/30 backdrop-blur-xl border border-[#FFC527]/50 rounded-full shadow-lg shadow-[#FFC527]/20">
+            <div className="inline-flex items-center space-x-2 sm:space-x-3 px-3 sm:px-4 lg:px-5 py-2 sm:py-3 lg:py-3 bg-gradient-to-r from-[#0057B8]/30 to-[#FFC527]/30 backdrop-blur-xl border border-[#FFC527]/50 rounded-full shadow-lg shadow-[#FFC527]/20">
               <div className="relative">
                 <div className="absolute inset-0 bg-[#FFC527] blur-md animate-pulse"></div>
                 <div className="relative w-2 h-2 sm:w-3 sm:h-3 bg-[#FFC527] rounded-full"></div>

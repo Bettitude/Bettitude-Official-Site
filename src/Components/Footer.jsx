@@ -47,6 +47,7 @@ export default function Footer() {
       // { name: 'Help Center', href: '/help' },
       { name: 'Community', href: '/community' },
       { name: 'Feedback', href: '/feedback' },
+      { name: 'Sitemap', href: '/sitemap' },
     ],
     legal: [
       { name: 'Legal', href: '/legal' },
