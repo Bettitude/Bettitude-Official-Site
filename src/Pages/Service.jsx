@@ -4,6 +4,8 @@ import { FaReddit, FaTiktok } from 'react-icons/fa';
 import ProBetPick from '../assets/ProBetPick.png'
 import BScores from '../assets/BScores.png'
 import BettiSportsLogo from '../assets/BettiSportsLogo.png'
+import SportsDisDat from '../assets/SportsDis&DatM.png'
+// import SportsDisDatM
 export default function Service() {
   const [activeService, setActiveService] = useState(0);
 
@@ -88,7 +90,38 @@ export default function Service() {
   color: 'from-[#FFC527] to-[#ffb700]',
   glowColor: 'shadow-[#FFC527]/50',
   bgImage: 'https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1920&q=80'
+},
+
+{
+  name: 'SportDisandDat',
+  image: SportsDisDat,
+  size: 300,
+  tagline: 'Sporting Equipment & Performance Gear',
+  description:
+    'SportDisandDat is a sports equipment and gear platform focused on providing reliable, performance-driven sporting essentials for athletes, teams, and fitness enthusiasts. Our mission is to support active lifestyles by making quality sports equipment accessible for training, competition, and recreation.',
+  features: [
+    'Professional sporting equipment',
+    'Training and fitness gear',
+    'Team and individual sports kits',
+    'Durable, performance-tested products',
+    'Equipment for all skill levels',
+    'Outdoor and indoor sports essentials'
+  ],
+
+  /* Mapping preserved – links intentionally disabled */
+  website: '',
+  link: '',
+  social: [
+    { icon: FiInstagram, link: '' },
+    { icon: FiTwitter, link: '' },
+    { icon: FaReddit, link: '' }
+  ],
+
+  color: 'from-[#FFC527] to-[#ffb700]',
+  glowColor: 'shadow-[#FFC527]/50',
+  bgImage: 'https://images.unsplash.com/photo-1599058917212-d750089bc07b?w=1920&q=80'
 }
+
 
   ];
 
