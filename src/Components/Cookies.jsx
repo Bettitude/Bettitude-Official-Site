@@ -57,7 +57,7 @@ const Cookies = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-[#0057B8]/40 to-[#FFC527]/40"></div>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4 sm:space-y-6 py-12 sm:py-16">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4 sm:space-y-6 py-12 sm:py-16 lg:py-30">
           <div className="inline-flex items-center space-x-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-[#FFC527]/20 backdrop-blur-sm border border-[#FFC527]/50 rounded-full">
             <FaCookie className="text-[#FFC527] text-xs sm:text-sm" />
             <span className="text-[#E0E0E0] text-xs sm:text-sm font-semibold">Legal Policy</span>

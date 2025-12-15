@@ -36,11 +36,12 @@ export default function Footer() {
       { name: 'SportDisandDat', href: 'https://sportdisanddat', external: true }
     ],
     services: [
-      { name: 'Betting Analytics', href: '/services/analytics' },
-      { name: 'Live Predictions', href: '/services/predictions' },
-      { name: 'Sports News', href: '/services/news' },
-      { name: 'Consultancy', href: '/services/consultancy' },
-    ],
+  { name: 'Betting Analytics', href: '/services#analytics' },
+  { name: 'Live Predictions', href: '/services#predictions' },
+  { name: 'Sports News', href: '/services#news' },
+  { name: 'Consultancy', href: '/services#consultancy' },
+],
+
     resources: [
       // { name: 'Blog', href: '/blog' },
       // { name: 'Help Center', href: '/help' },
