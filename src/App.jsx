@@ -19,7 +19,7 @@ import Newsletters from './Components/Newsletters'
 import Feedback from './Components/Feedback'
 import Partner from './Pages/Partner'
 import FooterService from './Pages/FooterService'
-import Sitemap from './Pages/SiteMap'
+import Sitemap from './Pages/Sitemap'
 const App = () => {
   return (
     <>
