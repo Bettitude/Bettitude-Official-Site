@@ -107,8 +107,6 @@ export default function Service() {
     'Equipment for all skill levels',
     'Outdoor and indoor sports essentials'
   ],
-
-  /* Mapping preserved – links intentionally disabled */
   website: '',
   link: '',
   social: [
@@ -119,7 +117,7 @@ export default function Service() {
 
   color: 'from-[#FFC527] to-[#ffb700]',
   glowColor: 'shadow-[#FFC527]/50',
-  bgImage: 'https://images.unsplash.com/photo-1599058917212-d750089bc07b?w=1920&q=80'
+ bgImage: 'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=1920&q=80'
 }
 
 
