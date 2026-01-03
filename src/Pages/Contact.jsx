@@ -26,7 +26,7 @@ const handleSubmit = async (e) => {
 
   try {
     const response = await fetch(
-      "",
+      "https://hook.eu1.make.com/exc8hbjl5ksk1uijo12ta9r7muqcmnfq",
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -46,6 +46,16 @@ const handleSubmit = async (e) => {
     setSubmitStatus("error");
   }
 };
+
+setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        service: "",
+        date: "",
+        time: "",
+        message: "",
+      });
 
 const handleChange = (e) => {
   setFormData({

@@ -8,6 +8,7 @@ import {
   FiMessageSquare,
   FiCheckCircle,
   FiArrowRight,
+  FiLoader,
 } from "react-icons/fi";
 
 export default function Appointment() {
@@ -20,7 +21,7 @@ export default function Appointment() {
     time: "",
     message: "",
   });
-  const [submitted, setSubmitted] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState("idle"); // idle, loading, success, error
 
   const services = [
     "Betting Consultation",
@@ -50,22 +51,40 @@ export default function Appointment() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    // Handle form submission logic here
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        service: "",
-        date: "",
-        time: "",
-        message: "",
-      });
-    }, 3000);
+    setSubmitStatus("loading");
+
+    try {
+      const response = await fetch(
+        "https://hook.eu1.make.com/sx83xc4gynppewmojnil0i5u3q4u96a3",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      if (response.ok) {
+        setSubmitStatus("success");
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          service: "",
+          date: "",
+          time: "",
+          message: "",
+        });
+        setTimeout(() => setSubmitStatus("idle"), 5000);
+      } else {
+        throw new Error("Form submission failed");
+      }
+    } catch (error) {
+      console.error(error);
+      setSubmitStatus("error");
+      setTimeout(() => setSubmitStatus("idle"), 3000);
+    }
   };
 
   return (
@@ -80,7 +99,7 @@ export default function Appointment() {
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gradient-to-r from-[#0057B8]/10 to-[#FFC527]/10 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-30">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-20">
         {/* Header Section */}
         <div className="text-center space-y-6 mb-16">
           <div className="inline-flex items-center space-x-2 px-4 py-2 bg-[#0057B8]/20 backdrop-blur-sm border border-[#0057B8]/50 rounded-full">
@@ -136,7 +155,7 @@ export default function Appointment() {
                   },
                   {
                     icon: FiCheckCircle,
-                    text: "Brand Promotion and Parternship",
+                    text: "Brand Promotion and Partnership",
                   },
                   {
                     icon: FiCheckCircle,
@@ -195,11 +214,39 @@ export default function Appointment() {
 
           {/* Right Side - Appointment Form */}
           <div className="relative bg-gradient-to-br from-[#0057B8]/10 to-[#0B0F19]/50 backdrop-blur-xl border border-[#0057B8]/30 rounded-3xl p-8 lg:p-10">
-            {!submitted ? (
+            {submitStatus === "success" ? (
+              <div className="text-center py-12 space-y-6">
+                <div className="w-20 h-20 bg-gradient-to-br from-[#FFC527] to-[#ffb700] rounded-full flex items-center justify-center mx-auto animate-bounce">
+                  <FiCheckCircle className="text-[#0B0F19] text-4xl" />
+                </div>
+                <h3 className="text-3xl font-black text-white">
+                  Appointment Booked!
+                </h3>
+                <p className="text-[#E0E0E0] text-lg">
+                  Thank you! We've received your appointment request and will
+                  send you a confirmation email shortly.
+                </p>
+                <button
+                  onClick={() => setSubmitStatus("idle")}
+                  className="mt-4 px-6 py-2 bg-[#0057B8]/30 border border-[#0057B8]/50 text-white rounded-xl hover:bg-[#0057B8]/50 transition-all duration-300"
+                >
+                  Book Another Appointment
+                </button>
+              </div>
+            ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
                 <h3 className="text-3xl font-black text-white mb-6">
                   Book Your Appointment
                 </h3>
+
+                {/* Error Message */}
+                {submitStatus === "error" && (
+                  <div className="bg-red-500/10 border border-red-500/50 rounded-xl p-4 text-center">
+                    <p className="text-red-400 font-semibold">
+                      Something went wrong. Please try again.
+                    </p>
+                  </div>
+                )}
 
                 {/* Name Input */}
                 <div className="space-y-2">
@@ -213,7 +260,8 @@ export default function Appointment() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-[#0057B8]/10 border border-[#0057B8]/30 rounded-xl text-white placeholder-[#E0E0E0]/50 focus:border-[#FFC527]/50 focus:outline-none transition-all duration-300"
+                    disabled={submitStatus === "loading"}
+                    className="w-full px-4 py-3 bg-[#0057B8]/10 border border-[#0057B8]/30 rounded-xl text-white placeholder-[#E0E0E0]/50 focus:border-[#FFC527]/50 focus:outline-none transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                     placeholder="John Doe"
                   />
                 </div>
@@ -230,7 +278,8 @@ export default function Appointment() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-[#0057B8]/10 border border-[#0057B8]/30 rounded-xl text-white placeholder-[#E0E0E0]/50 focus:border-[#FFC527]/50 focus:outline-none transition-all duration-300"
+                    disabled={submitStatus === "loading"}
+                    className="w-full px-4 py-3 bg-[#0057B8]/10 border border-[#0057B8]/30 rounded-xl text-white placeholder-[#E0E0E0]/50 focus:border-[#FFC527]/50 focus:outline-none transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                     placeholder="john@example.com"
                   />
                 </div>
@@ -247,7 +296,8 @@ export default function Appointment() {
                     value={formData.phone}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-[#0057B8]/10 border border-[#0057B8]/30 rounded-xl text-white placeholder-[#E0E0E0]/50 focus:border-[#FFC527]/50 focus:outline-none transition-all duration-300"
+                    disabled={submitStatus === "loading"}
+                    className="w-full px-4 py-3 bg-[#0057B8]/10 border border-[#0057B8]/30 rounded-xl text-white placeholder-[#E0E0E0]/50 focus:border-[#FFC527]/50 focus:outline-none transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                     placeholder="+1 (555) 123-4567"
                   />
                 </div>
@@ -263,7 +313,8 @@ export default function Appointment() {
                     value={formData.service}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-[#0057B8]/10 border border-[#0057B8]/30 rounded-xl text-white focus:border-[#FFC527]/50 focus:outline-none transition-all duration-300"
+                    disabled={submitStatus === "loading"}
+                    className="w-full px-4 py-3 bg-[#0057B8]/10 border border-[#0057B8]/30 rounded-xl text-white focus:border-[#FFC527]/50 focus:outline-none transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     <option value="">Select a service</option>
                     {services.map((service, idx) => (
@@ -291,7 +342,8 @@ export default function Appointment() {
                       value={formData.date}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 bg-[#0057B8]/10 border border-[#0057B8]/30 rounded-xl text-white focus:border-[#FFC527]/50 focus:outline-none transition-all duration-300"
+                      disabled={submitStatus === "loading"}
+                      className="w-full px-4 py-3 bg-[#0057B8]/10 border border-[#0057B8]/30 rounded-xl text-white focus:border-[#FFC527]/50 focus:outline-none transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                     />
                   </div>
 
@@ -305,7 +357,8 @@ export default function Appointment() {
                       value={formData.time}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 bg-[#0057B8]/10 border border-[#0057B8]/30 rounded-xl text-white focus:border-[#FFC527]/50 focus:outline-none transition-all duration-300"
+                      disabled={submitStatus === "loading"}
+                      className="w-full px-4 py-3 bg-[#0057B8]/10 border border-[#0057B8]/30 rounded-xl text-white focus:border-[#FFC527]/50 focus:outline-none transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       <option value="">Select time</option>
                       {timeSlots.map((time, idx) => (
@@ -328,7 +381,8 @@ export default function Appointment() {
                     value={formData.message}
                     onChange={handleChange}
                     rows="4"
-                    className="w-full px-4 py-3 bg-[#0057B8]/10 border border-[#0057B8]/30 rounded-xl text-white placeholder-[#E0E0E0]/50 focus:border-[#FFC527]/50 focus:outline-none transition-all duration-300 resize-none"
+                    disabled={submitStatus === "loading"}
+                    className="w-full px-4 py-3 bg-[#0057B8]/10 border border-[#0057B8]/30 rounded-xl text-white placeholder-[#E0E0E0]/50 focus:border-[#FFC527]/50 focus:outline-none transition-all duration-300 resize-none disabled:opacity-50 disabled:cursor-not-allowed"
                     placeholder="Tell us more about your needs..."
                   ></textarea>
                 </div>
@@ -336,25 +390,22 @@ export default function Appointment() {
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  className="w-full group flex items-center justify-center space-x-2 px-8 py-4 bg-gradient-to-r from-[#FFC527] to-[#ffb700] text-[#0B0F19] font-bold rounded-xl hover:shadow-2xl hover:shadow-[#FFC527]/50 transition-all duration-300 hover:scale-105"
+                  disabled={submitStatus === "loading"}
+                  className="w-full group flex items-center justify-center space-x-2 px-8 py-4 bg-gradient-to-r from-[#FFC527] to-[#ffb700] text-[#0B0F19] font-bold rounded-xl hover:shadow-2xl hover:shadow-[#FFC527]/50 transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                 >
-                  <span>Book Appointment</span>
-                  <FiArrowRight className="text-xl group-hover:translate-x-1 transition-transform duration-300" />
+                  {submitStatus === "loading" ? (
+                    <>
+                      <FiLoader className="text-xl animate-spin" />
+                      <span>Sending...</span>
+                    </>
+                  ) : (
+                    <>
+                      <span>Book Appointment</span>
+                      <FiArrowRight className="text-xl group-hover:translate-x-1 transition-transform duration-300" />
+                    </>
+                  )}
                 </button>
               </form>
-            ) : (
-              <div className="text-center py-12 space-y-6">
-                <div className="w-20 h-20 bg-gradient-to-br from-[#FFC527] to-[#ffb700] rounded-full flex items-center justify-center mx-auto">
-                  <FiCheckCircle className="text-[#0B0F19] text-4xl" />
-                </div>
-                <h3 className="text-3xl font-black text-white">
-                  Appointment Booked!
-                </h3>
-                <p className="text-[#E0E0E0] text-lg">
-                  Thank you! We've received your appointment request and will
-                  send you a confirmation email shortly.
-                </p>
-              </div>
             )}
           </div>
         </div>
