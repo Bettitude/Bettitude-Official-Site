@@ -165,7 +165,7 @@ export default function Newsletters() {
               </div>
               
               <a
-                href="https://t.me/your_channel"
+                href="https://t.me/bettitude"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group/btn flex items-center space-x-2 px-5 sm:px-6 py-3 sm:py-3.5 bg-gradient-to-r from-[#0088cc] to-[#006699] text-white rounded-xl font-bold hover:shadow-2xl hover:shadow-[#0088cc]/50 hover:scale-105 transition-all duration-300 whitespace-nowrap"
