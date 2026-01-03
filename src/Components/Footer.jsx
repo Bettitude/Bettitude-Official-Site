@@ -102,7 +102,7 @@ export default function Footer() {
     },
     {
       icon: FaTelegramPlane,
-      href: 'https://www.reddit.com/user/bettitude/',
+      href: 'https://t.me/bettitude',
       label: 'Telegra,',
       color: 'hover:bg-[#FF4500]/20 hover:border-[#FF4500]/50',
     },
